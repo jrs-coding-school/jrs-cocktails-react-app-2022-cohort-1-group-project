@@ -2,7 +2,7 @@ import React from 'react';
 import AdvancedSearch from './AdvancedSearch';
 import './DrinkSearch.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faAddressBook } from '@fortawesome/free-regular-svg-icons'
+import { faThumbsUp } from '@fortawesome/free-regular-svg-icons'
 
 
 export default function DrinkSearch() {
@@ -11,9 +11,11 @@ export default function DrinkSearch() {
     return (
         <form className='drink-form'>
             <div className='drink-search'>
-                <form>
-                    <input type="search" placeholder="Search..." />
-                    <FontAwesomeIcon icon={faAddressBook} />
+                <form className='search-bar'>
+                    <input type="search" placeholder="Search for Cocktail..." />
+                    <button type='submit'>
+                    {/* <FontAwesomeIcon size="2x" icon={faThumbsUp} /> */}
+                    </button>
                         {/* <button type="submit">Search</button> */}
                 </form>
             </div>
