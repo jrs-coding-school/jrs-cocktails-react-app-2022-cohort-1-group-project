@@ -1,0 +1,18 @@
+/* body {
+    background-color: hsl(184, 93%, 38%);
+} */
+
+.random-drink {
+ 
+    width: fit-content;
+    text-align: center;
+    height: 4em;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 3em;
+}
+
+.random-drink-button {
+    padding: 3px 2em;
+
+}
