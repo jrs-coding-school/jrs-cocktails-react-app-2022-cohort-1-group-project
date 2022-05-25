@@ -1,0 +1,22 @@
+.drink-card-root{
+    width: fit-content;
+    margin: auto;
+    padding: 1rem;
+    position: relative;
+    border-radius: 1rem;
+    text-align: center;
+    background-color: rgba(241, 241, 241, 0.827);
+    }
+
+.drink-card-root .icon-container{
+    position: absolute;
+    bottom: .5rem;
+    right: 0.75em;
+    color: #F74447;
+}
+
+.drink-card-root img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+}
