@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react'
 import './UserLoginSignup.css'
+import { Link} from "react-router-dom";
 import { useAxios } from '../../services/axios.service';
 import { useNavigate } from 'react-router';
 import { useLocalStorage } from '../../services/localstorage.service';
@@ -9,7 +10,7 @@ export default function LoginForm() {
   const localStorageService = useLocalStorage()
   const http = useAxios()
   var navigate = useNavigate()
-
+  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     username: '',
     password: ''
@@ -28,34 +29,38 @@ export default function LoginForm() {
     });
   }
 
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    // setIsLoading(true)
-
+  function attemptLogIn() {
+    setIsLoading(true)
     if (formData.username && formData.password) {
-
-      //send formData to API to request login
       http.login(formData)
         .then(results => {
           console.log(results.data)
           localStorageService.saveUser(results.data.user);
           navigate('/')
         }).catch(err => {
-          // setIsLoading(false)
+          setIsLoading(false)
 
           setFormData({ username: '', password: '' });
         })
     }
   }
 
+  function handleFormSubmit(e) {
+    e.preventDefault()
+    setIsLoading(true)
+    setTimeout(() => {
+      attemptLogIn()
+      }, 1000)
+  }
+
+
   return (
     <form className="login-form"
       onSubmit={handleFormSubmit}>
-      <h2>Let's save your favorite cocktails!</h2>
-      <h3>Login to your account</h3>
-      <div>
+      <h2>Log In </h2>
+      <div className='input-container'>
+      <div className='login-input'>
         <label htmlFor="username">
-          username :
         </label>
         <input
           type="username"
@@ -69,9 +74,8 @@ export default function LoginForm() {
         />
       </div>
 
-      <div>
+      <div className='password-input'>
         <label htmlFor="password">
-          Password :
         </label>
         <input
           type="password"
@@ -83,12 +87,19 @@ export default function LoginForm() {
           id="password"
           required
         />
+        </div>
         <br />
         <button
           type="submit"
+          className='login-button'
         >
-          login
+          Sip Sip Hooray!
         </button>
+        <p>Not a member? 
+            <Link to="/signup">
+              <p>Sign up now</p>
+            </Link>
+           </p>
       </div>
 
     </form>
