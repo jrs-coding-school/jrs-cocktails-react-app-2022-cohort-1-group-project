@@ -3,7 +3,7 @@ const URL = `http://localhost:8080/api`
 
 // -------ALL USER ROUTES--------------//
 function getUserFavoritesById(userId) {
-    return axios.get(`${URL}/users/favorite/${userId}`)
+    return axios.get(`${URL}/drinks/favorites/${userId}`)
 }
 
 function createNewUser({ username, password }) {
