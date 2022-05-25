@@ -14,14 +14,12 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-
       {visible ? <DrinkSearch /> : <AdvancedSearch />}
       {/* <div className='home-container'>
       <button className="toggle one" onClick={() => setVisible(!visible)}>Search by Cocktail</button>
       <button className="toggle two" onClick={() => setVisible(!visible)}>Search by Ingredient</button>
       </div> */}
-      {visible ? <button className="toggle two" onClick={() => setVisible(!visible)}>Search by Ingredient</button> : <button className="toggle one" onClick={() => setVisible(!visible)}>Search for Cocktail</button>}     
+      {visible ? <button className="toggle two" onClick={() => setVisible(!visible)}>Search by Ingredient</button> : <button className="toggle one" onClick={() => setVisible(!visible)}>Search by Cocktail</button>}
       <RandomCocktailGenerator />
       <Footer />
     </div>
@@ -29,5 +27,3 @@ function App() {
 }
 
 export default App;
-
-
