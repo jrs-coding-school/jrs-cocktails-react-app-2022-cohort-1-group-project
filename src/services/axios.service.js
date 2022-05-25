@@ -11,14 +11,15 @@ function createNewUser({ username, password }) {
 }
 
 function login({ username, password }) {
-    return axios.post(`${URL}/users/login`, { username, password })
+       return axios.post(`${URL}/users/login`, { username, password })
 }
 
 function addReview({ userId, drinkId, rating, comment }) {
     return axios.post(`${URL}/users/review`, { userId, drinkId, rating, comment })
 }
 
-function addNewFavorite({ userId, drinkId }) {
+// NOTE -> CHANGED PARAMS TO BE OUT OF AN OBJECT 
+function addNewFavorite( userId, drinkId ) {
     return axios.post(`${URL}/users/favorite`, { userId, drinkId })
 }
 

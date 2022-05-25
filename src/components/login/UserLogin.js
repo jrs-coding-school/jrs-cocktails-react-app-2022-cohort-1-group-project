@@ -5,7 +5,8 @@ import { useNavigate } from 'react-router';
 import { useLocalStorage } from '../../services/localstorage.service';
 
 export default function LoginForm() {
-  const localStorage = useLocalStorage()
+  
+  const localStorageService = useLocalStorage()
   const http = useAxios()
   var navigate = useNavigate()
 
@@ -36,8 +37,8 @@ export default function LoginForm() {
       //send formData to API to request login
       http.login(formData)
         .then(results => {
-
-          localStorage.saveUser(results.data.user);
+          console.log(results.data)
+          localStorageService.saveUser(results.data.user);
           navigate('/')
         }).catch(err => {
           // setIsLoading(false)
