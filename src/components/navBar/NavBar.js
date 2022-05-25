@@ -23,7 +23,7 @@ export default function NavBar () {
       </div>
       {/* <div className='title'>Whiskey Business</div> */}
       <div>
-        <Link to="/login">
+        <Link to="/signup">
           <button type="button">Sign Up</button>
         </Link>
         <Link to="/login">

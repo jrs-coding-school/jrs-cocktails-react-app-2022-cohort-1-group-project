@@ -1,106 +1,67 @@
-.drink-form {
-    border-top: #00353f 3px solid;
 
+.search-bar {
     display: flex;
     justify-content: space-around;
-    align-items: center;
-}
+    text-align: center;
 
-.drink-search {
-    /* display: flex;
-    flex-direction: column;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    padding: 2.06em; */
-    /* width: 20em; */
-    /* border: 3px solid #00353f;
-    border-radius: 14px;
-    background-color: #ffbf66; */
-}
-
-.ingredient-search {
-    display: flex;
-    margin-top: 3em;
-    margin-bottom: 3em;
-    flex-direction: column;
-    border: 3px solid #00353f;
-    padding: 1.5em;
-    border-radius: 14px;
-    background-color: #ffbf66;
-
-}
-
-.drinkname {
-    margin-bottom: 5px;
-}
-
-.ingredient {
-    margin-bottom: 5px;
-}
-
-
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-}
-
-form {
-    color: #555;
-    display: flex;
-    padding: 2px;
-    /* border: 1px solid currentColor; */
+    margin: auto;
+    margin-top: 10em;
+    width: fit-content;
+    
     border-radius: 5px;
-    margin: 0 0 30px;
+    color: #555;
+    align-items: center;
+    max-width: 100%;
+    position: relative;
+
 }
 
-input[type="search"] {
+.search-bar .cocktail-search[type="search"] {
     border: none;
-    width: 30em;
-    height: 3em;
+    width: 40em;
+    height: 3.5em;
     background: white;
     margin: 0;
     padding: 7px 8px;
     font-size: 14px;
     color: inherit;
-    border-radius: 3px 0 0 3px;
+    border-radius: 4px 0 0 4px;
+    font-size: 14pt;
 }
 
-input[type="search"]::placeholder {
+.search-bar .cocktail-search[type="search"]::placeholder {
     color: #bbb;
+    font-size: 14pt;
 }
 
-button[type="submit"] {
+.search-bar .mag-glass[type="submit"] {
     text-indent: -999px;
     overflow: hidden;
     width: 40px;
-    height: 42px;
+    height: 65.6px;
     padding: 0;
     margin: 0;
     border: none;
-    border-radius: 0 3px 3px 0;
+    border-radius: 0 4px 4px 0;
     background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
     cursor: pointer;
 }
 
-button[type="submit"]:hover {
+.search-bar .mag-glass[type="submit"]:hover {
     opacity: 1;
 }
 
 
-input[type="search"]:focus {
-    /* box-shadow: 0 0 3px 0 #1183d6;
-    border-color: #1183d6; */
+.search-bar .cocktail-search[type="search"]:focus {
+
     outline: none;
 }
 
-button[type="submit"]:focus {
+.search-bar .mag-glass[type="submit"]:focus {
     outline: none;
-    /* border-color: #1183d6; */
 
 }
 
-.search-bar {
-    margin-top: 3em;
-}
+
+
+
