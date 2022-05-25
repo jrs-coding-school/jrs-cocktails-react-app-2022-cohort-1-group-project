@@ -9,12 +9,14 @@ import UserSignUp from './components/login/UserSignUp';
 import IngredientsLandingPage from './components/ingredientsLandingPage/IngredientsLandingPage';
 import IndividualDrinkPage from './components/individualDrinkPage/IndividualDrinkPage';
 import MyDrinksPage from './components/myDrinks/MyDrinksPage';
+import NavBar from './components/navBar/NavBar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <div className="App">
       <BrowserRouter>
+      <NavBar/>
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/login" element={<UserLogin />}></Route>
