@@ -1,8 +1,14 @@
-import React from 'react';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Link, useParams } from "react-router-dom";
+import { useAxios } from '../../services/axios.service';
 import './NavBar.css'
 
-export default function NavBar() {
+export default function NavBar () {
+
+
+  const http = useAxios();
+  const { userId } = useParams();
+
   return (
 
     <nav className="hidden">
@@ -10,9 +16,12 @@ export default function NavBar() {
         <Link to={"/"}>
           <button type='button'>HOME</button>
         </Link>
-        <button type='button'>My Drinks</button>
+        <Link to={"/my-drinks"}>
+          My Drinks
+        </Link>
+
       </div>
-  {/* <div className='title'>Whiskey Business</div> */}
+      {/* <div className='title'>Whiskey Business</div> */}
       <div>
         <Link to="/login">
           <button type="button">Sign Up</button>
