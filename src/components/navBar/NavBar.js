@@ -21,7 +21,6 @@ export default function NavBar () {
         </Link>
 
       </div>
-      {/* <div className='title'>Whiskey Business</div> */}
       <div>
         <Link to="/signup">
           <button type="button">Sign Up</button>

@@ -19,7 +19,8 @@ function App() {
       <button className="toggle one" onClick={() => setVisible(!visible)}>Search by Cocktail</button>
       <button className="toggle two" onClick={() => setVisible(!visible)}>Search by Ingredient</button>
       </div> */}
-      {visible ? <button className="toggle two" onClick={() => setVisible(!visible)}>Search by Ingredient</button> : <button className="toggle one" onClick={() => setVisible(!visible)}>Search by Cocktail</button>}
+      {visible ? <button className="toggle two" onClick={() => setVisible(!visible)}>Click here to Search by Ingredients</button> 
+      : <button className="toggle one" onClick={() => setVisible(!visible)}>Click here to Search by Cocktail</button>}
       <RandomCocktailGenerator />
       <Footer />
     </div>

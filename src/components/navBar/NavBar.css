@@ -9,11 +9,10 @@ body {
 nav {
     padding: 5px;
     /* margin: 1px; */
-
+    font-weight: bold;
     /* border-radius: 4px; */
     font-family: 'Roboto', sans-serif;
-
-    background-color: hsl(184, 93%, 38%);
+    /* background-color: hsl(184, 93%, 38%); */
 
     display: flex;
     justify-content: space-between;
@@ -23,10 +22,12 @@ nav {
 
 
 nav button {
-    background: #ffbf66;
-    color: #00353f;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.718);
     font-family: 'Roboto', sans-serif;
-    border-radius: 4px;
+    font-size: 12pt;
+    /* border-radius: 4px; */
 
 }
 
@@ -36,8 +37,8 @@ nav a {
 }
 
 nav button:hover {
-    background-color: #00353f;
-    color: #ffbf66;
+    background: none;
+    color: white;
 }
 
 .title {

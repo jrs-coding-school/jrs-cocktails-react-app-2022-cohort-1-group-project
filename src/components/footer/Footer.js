@@ -6,7 +6,7 @@ export default function Footer() {
     <div>
       <footer>
   <p>Author: KT KL BF
-  <a href="mailto:staff@whiskeybusiness.com">staff@whiskeybusiness.com</a></p>
+  <a href="mailto:staff@sipsiphooray.com">staff@sipsiphooray.com</a></p>
 </footer>
     </div>
   )
