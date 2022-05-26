@@ -14,6 +14,12 @@ body {
     text-align: center;
 }
 
+.sign-up-form {
+    background-color: hwb(14 35% 15%);
+}
+    
+
+
 .input-container {
     margin: auto;
     width: 20rem;

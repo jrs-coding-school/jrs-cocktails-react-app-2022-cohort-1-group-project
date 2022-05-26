@@ -57,7 +57,8 @@ export default function LoginForm() {
   return (
     <form className="login-form"
       onSubmit={handleFormSubmit}>
-      <h2>Log In </h2>
+      <h1> LOGIN HEADING</h1>
+      <h2>Subtitle Lorem Ipsum</h2>
       <div className='input-container'>
       <div className='login-input'>
         <label htmlFor="username">
@@ -93,13 +94,15 @@ export default function LoginForm() {
           type="submit"
           className='login-button'
         >
-          Sip Sip Hooray!
+         Login, Sip Sip Hooray!
         </button>
-        <p>Not a member? 
+        <br/>
+        <br/>
+        <span>Not a member? 
             <Link to="/signup">
               <p>Sign up now</p>
             </Link>
-           </p>
+        </span>
       </div>
 
     </form>

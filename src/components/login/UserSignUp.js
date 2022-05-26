@@ -53,7 +53,8 @@ export default function UserSignUp() {
 
       <form className="sign-up-form"
         onSubmit={handleFormSubmit}>
-        <h2>Create a FREE account!</h2>
+        <h2>Let's get started!</h2>
+        <h1>You're taking the first step to saving your favorite cocktails!</h1>
         <div className='input-container'>
           <div className='sign-up-input'>
             <label htmlFor="username">
@@ -89,8 +90,10 @@ export default function UserSignUp() {
             type="submit"
             className='sign-up-button'
           >
-            Sip Sip Hooray!
+            Sip Sip Hooray! Create my account!
           </button>
+          <br/>
+          <br/>
           <p>Already a member?
             <Link to="/login">
               <p>Let's log in!</p>
