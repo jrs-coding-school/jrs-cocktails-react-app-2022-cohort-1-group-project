@@ -55,6 +55,7 @@ export default function LoginForm() {
 
 
   return (
+    <div className='user-pages'>
     <form className="login-form"
       onSubmit={handleFormSubmit}>
       <h1> LOGIN HEADING</h1>
@@ -106,6 +107,6 @@ export default function LoginForm() {
       </div>
 
     </form>
-
+</div>
   )
 }

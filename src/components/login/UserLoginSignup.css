@@ -1,8 +1,8 @@
-body {
+.user-pages body {
     display: grid;
     place-items: center;
 }
-.login-form, .sign-up-form {
+.user-pages .login-form, .sign-up-form {
     background-color: #A5AF7F;
     display: flex;
     flex-direction: column;
@@ -14,28 +14,28 @@ body {
     text-align: center;
 }
 
-.sign-up-form {
+.user-pages .sign-up-form {
     background-color: hwb(14 35% 15%);
 }
     
 
 
-.input-container {
+.user-pages .input-container {
     margin: auto;
     width: 20rem;
 }
 
-input {
+.user-pages input {
     border: none;
     height: 4rem;
     width: 100%;
 }
 
-.password-input {
+.user-pages  .password-input {
     padding-top: 1rem;
 }
 
-label {
+.user-pages label {
     display:none;
 }
 

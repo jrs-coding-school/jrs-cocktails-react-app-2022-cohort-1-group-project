@@ -48,9 +48,7 @@ export default function UserSignUp() {
   }
 
   return (
-    <div>
-      <div>NavBar</div>
-
+    <div className='user-pages'>
       <form className="sign-up-form"
         onSubmit={handleFormSubmit}>
         <h2>Let's get started!</h2>
