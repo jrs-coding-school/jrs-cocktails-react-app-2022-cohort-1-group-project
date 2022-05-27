@@ -36,25 +36,27 @@ const signUpButton = (
   <button onClick={() => {
       navigate('/signup')
   }}>
-     Sign up
+     Sign up  <span>|</span>
   </button>
 )
 
   return (
 
-    <nav className="hidden">
-      <div>
+    <nav className="nav-bar-root">
+      <div className='nav-bar-left'>
         <Link to={"/"}>
-          <button type='button'>HOME</button>
+          <button type='button'>Home</button>
         </Link>
+        <span>|</span>
         <Link to={"/my-drinks"}>
-          My Drinks
+          <button type='button'>My Drinks</button>
         </Link>
 
       </div>
-      <div> 
-        {user ? logoutButton : loginButton } 
+      <div className='nav-bar-right'> 
         {user ? '' : signUpButton }
+       
+        {user ? logoutButton : loginButton } 
        
       </div>
     </nav>
