@@ -39,7 +39,7 @@ export default function LoginForm() {
           navigate('/')
         }).catch(err => {
           setIsLoading(false)
-
+console.log(err)
           setFormData({ username: '', password: '' });
         })
     }
