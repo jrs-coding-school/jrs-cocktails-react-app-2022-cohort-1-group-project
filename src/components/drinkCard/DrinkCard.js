@@ -8,34 +8,40 @@ import { useAxios } from '../../services/axios.service'
 import { useLocalStorage } from '../../services/localstorage.service'
 import { Link } from 'react-router-dom'
 
-export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav }) {
+export default function DrinkCard ( { idDrink, strDrink, strDrinkThumb, isFav, setIsFav, setIsNotFav } ) {
 
   const http = useAxios();
   const localStorageService = useLocalStorage();
   const user = localStorageService.getUser();
 
-  function handleHeartClicked() {
-    ///------------- MUST BE ABLE TO UNFAVORITE DRINK (UNFAV IF STATEMENT NOT WORKING ATTTT ALLLLL)----------------//
-
-    if (isFav) {
-      // remove from favorites
-      var isFav = !isFav
+  function handleHeartClicked () {
+///-----------delete drink logic ----------------///    
+    if ( isFav ) {
       // remove from favorites in database
-      // which would mean that it would no longer show up on favorites page
-      // so, then, will it be necessary to "unheart" the favorite?
+      var userId = user.id
 
-      var userId = user.id || '780219d4-d79f-11ec-856c-6b8b7bc362a1'
-      http.deleteFavorite(userId, idDrink)
+      http.deleteFavorite( userId, idDrink )
+        .then( results => {
+          // remove from favorites on Favs array
+          if ( setIsNotFav ) {
+            setIsNotFav( idDrink )
+          }
+        } )
+        .catch( err => console.error( err ) )
 
-        .then(results => console.log(userId, idDrink))
-        .catch(err => console.error(err))
     } else {
+///---------------add drink logic ------------------//
+      var userId = user.id
 
-      var userId = user.id || '780219d4-d79f-11ec-856c-6b8b7bc362a1'
-
-      http.addNewFavorite(userId, idDrink)
-        .then(results => console.log(userId, idDrink))
-        .catch(err => console.error(err))
+      http.addNewFavorite( userId, idDrink )
+        .then( results => {
+          // add to Favs array here
+          if(setIsFav){
+            setIsFav(idDrink)
+          }
+          console.log( userId, idDrink )
+        })
+        .catch( err => console.error( err ) )
     }
   }
 
@@ -44,13 +50,13 @@ export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav }) {
     <div className='icon-container'
       onClick={handleHeartClicked}>
       <FontAwesomeIcon icon={faHeartRegular} />
-    </div>)
+    </div> )
 
   const solidHeart = (
-    <div className='icon-container'>
-      {/* ADD ONCLICK = NAMED FUNCTION TO UNFAVORITE */}
+    <div className='icon-container'
+      onClick={handleHeartClicked}>
       <FontAwesomeIcon icon={faHeartSolid} />
-    </div>)
+    </div> )
 
   return (
     <Link to={`/cocktail/${idDrink}`}>
