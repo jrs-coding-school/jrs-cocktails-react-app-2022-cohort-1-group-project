@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
@@ -19,17 +19,20 @@ export default function UserSignUp() {
   const [isUsernameTaken, setIsUsernameTaken] = useState(true);
 
   const usernameRef = useRef(null);
-  const passwordRef = useRef(null)
+  const passwordRef = useRef(null);
+  const timeoutRef = useRef(null);
 
 
   function attemptSignUp(formData) {
     http.createNewUser(formData)
       .then(results => {
         console.log(results)
+        alert("Account creation was a success!")
         localStorageService.saveUser(results.data.user)
         navigate('/')
       }).catch(err => {
         console.error(err);
+        alert("Oops! Username exists! Try something else")
       }
       )
   }
@@ -55,29 +58,31 @@ export default function UserSignUp() {
 // -----CHECK IF USERNAME IS TAKEN --------------
 
   function checkIfUsernameIsTaken() {
-    http.getRouteByUsername(formData.username)
+    http.getUserbyUsername (formData.username)
         .then((res) => {
           console.log('the get route by username was sent! It returned this')
           console.log(formData.username)
             setIsUsernameTaken(true)
         })
         .catch((err) => {
+          console.log(err);
             let statusCode = err.response.statusCode
             if (statusCode == 404) {
                 setIsUsernameTaken(false)
             } else if (err.response.status == 401) {
               setIsUsernameTaken(true)
-            } else {
-              console.err(err)
-            }
+            } 
+            // else {
+            //   console.err(err)
+            // }
         })             
 }
 
-// useEffect(() => {
-//     clearTimeout(timeoutRef.current)
-//     timeoutRef.current = setTimeout(() => { checkIfUsernameIsTaken() }, 500)
+useEffect(() => {
+    clearTimeout(timeoutRef.current)
+    timeoutRef.current = setTimeout(() => { checkIfUsernameIsTaken() }, 500)
 
-// }, [formData.username])
+}, [formData.username])
 
 
   return (
@@ -127,7 +132,7 @@ export default function UserSignUp() {
           <br/>
           <p className='cta-switch-container'>Already a member?
             <Link to="/login">
-              <p>Let's log in!</p>
+              Let's log in!
             </Link>
           </p>
         </div>

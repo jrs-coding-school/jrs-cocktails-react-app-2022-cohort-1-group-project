@@ -6,6 +6,10 @@ function getUserFavoritesById ( userId ) {
     return axios.get( `${URL}/drinks/favorites/${userId}` )
 }
 
+function getUserbyUsername ( username ) {
+    return login({username, password: ''})
+}
+
 function createNewUser ( { username, password } ) {
     return axios.post( `${URL}/users/signup`, { username, password } )
 }
@@ -69,7 +73,8 @@ const api = {
     getDrinkById,
     getDrinksByName,
     getDrinksBySpirit,
-    getDrinksByTwoIngredients
+    getDrinksByTwoIngredients, 
+    getUserbyUsername
 }
 
 function useAxios () {

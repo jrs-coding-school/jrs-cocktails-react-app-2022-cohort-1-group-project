@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
 import './UserLoginSignup.css'
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAxios } from '../../services/axios.service';
 import { useNavigate } from 'react-router';
 import { useLocalStorage } from '../../services/localstorage.service';
 
 export default function LoginForm() {
-  
+
   const localStorageService = useLocalStorage()
   const http = useAxios()
   var navigate = useNavigate()
@@ -35,11 +35,13 @@ export default function LoginForm() {
       http.login(formData)
         .then(results => {
           console.log(results.data)
+          alert("Welcome Back!")
           localStorageService.saveUser(results.data.user);
           navigate('/')
         }).catch(err => {
           setIsLoading(false)
-console.log(err)
+          console.log(err)
+          alert("Oops, try again. Username or Password was incorrect.")
           setFormData({ username: '', password: '' });
         })
     }
@@ -50,67 +52,68 @@ console.log(err)
     setIsLoading(true)
     setTimeout(() => {
       attemptLogIn()
-      }, 1000)
+    }, 1000)
   }
 
-  useEffect (() => {
-    usernameRef.current.focus()}, [])
-  
+  useEffect(() => {
+    usernameRef.current.focus()
+  }, [])
+
 
 
   return (
     <div className='user-pages'>
-    <form className="login-form"
-      onSubmit={handleFormSubmit}>
-      <h1> LOGIN HEADING</h1>
-      <h2>Subtitle Lorem Ipsum</h2>
-      <div className='input-container'>
-      <div className='login-input'>
-        <label htmlFor="username">
-        </label>
-        <input
-          type="username"
-          name="username"
-          value={formData.username}
-          onChange={handleChange}
-          ref={usernameRef}
-          placeholder="Username"
-          id="username"
-          required
-        />
-      </div>
+      <form className="login-form"
+        onSubmit={handleFormSubmit}>
+        <h1> LOGIN HEADING</h1>
+        <h2>Subtitle Lorem Ipsum</h2>
+        <div className='input-container'>
+          <div className='login-input'>
+            <label htmlFor="username">
+            </label>
+            <input
+              type="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+              ref={usernameRef}
+              placeholder="Username"
+              id="username"
+              required
+            />
+          </div>
 
-      <div className='password-input'>
-        <label htmlFor="password">
-        </label>
-        <input
-          type="password"
-          name="password"
-          value={formData.password}
-          onChange={handleChange}
-          ref={passwordRef}
-          placeholder="Password"
-          id="password"
-          required
-        />
-        </div>
-        <br />
-        <button
-          type="submit"
-          className='login-button'
-        >
-         Sip Sip Hooray!
-        </button>
-        <br/>
-        <br/>
-        <p className="cta-switch-container">Not a member? 
+          <div className='password-input'>
+            <label htmlFor="password">
+            </label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              ref={passwordRef}
+              placeholder="Password"
+              id="password"
+              required
+            />
+          </div>
+          <br />
+          <button
+            type="submit"
+            className='login-button'
+          >
+            Sip Sip Hooray!
+          </button>
+          <br />
+          <br />
+          <p className="cta-switch-container">Not a member?
             <Link to="/signup">
               <p>Sign up now</p>
             </Link>
-        </p>
-      </div>
+          </p>
+        </div>
 
-    </form>
-</div>
+      </form>
+    </div>
   )
 }
