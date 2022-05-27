@@ -1,0 +1,42 @@
+.individual-drink-page-root {
+    background-color: lightblue;
+    width: 40em;
+    margin: auto;
+    margin-top: 3em;
+    padding: 15px 24px 5px 15px;
+    border-radius: 15px;
+    opacity: .85;
+    position: relative;
+}
+
+.ind-drink-name {
+    height: 1em;
+    position: absolute;
+    left: 12em;
+    top: 1em;
+}
+
+.individual-drink-page-root .ind-drink-image {
+    width: 20em;
+    height: 20em;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.ingredients-container{
+    top: 7em;
+    left: 25em;
+    position: absolute;
+    font-size: 12pt;
+}
+
+.instructions-container {
+    position: absolute;
+    top: 9.8em;
+    left: 35em;
+    width: fit-content;
+}
+
+.drink-instructions {
+    padding: 20px;
+}

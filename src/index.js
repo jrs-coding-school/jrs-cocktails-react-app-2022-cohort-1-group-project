@@ -14,9 +14,8 @@ import NavBar from './components/navBar/NavBar';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <div className="App">
       <BrowserRouter>
-      <NavBar/>
+      <NavBar />
         <Routes>
           <Route path="/" element={<App />}></Route>
           <Route path="/login" element={<UserLogin />}></Route>
@@ -24,12 +23,13 @@ root.render(
           <Route path="/cocktails" element={<IngredientsLandingPage />}></Route>
           <Route path="/cocktails/:spirit" element={<IngredientsLandingPage />}></Route>
           <Route path="/cocktails/:spirit/:ingredient" element={<IngredientsLandingPage />}></Route>
+          
           <Route path="/cocktail/:id" element={<IndividualDrinkPage />}></Route>
+          
           <Route path="/my-drinks" element={<MyDrinksPage />}></Route>
           <Route path="*" element={<div>404 - page does not exist</div>}></Route>
         </Routes>
       </BrowserRouter>
-    </div>
   </React.StrictMode>
 );
 

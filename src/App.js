@@ -15,13 +15,10 @@ function App() {
   return (
     <div className="App">
       {visible ? <DrinkSearch /> : <AdvancedSearch />}
-      {/* <div className='home-container'>
-      <button className="toggle one" onClick={() => setVisible(!visible)}>Search by Cocktail</button>
-      <button className="toggle two" onClick={() => setVisible(!visible)}>Search by Ingredient</button>
-      </div> */}
+    
       {visible ? <button className="toggle two" onClick={() => setVisible(!visible)}>Click here to Search by Ingredients</button> 
       : <button className="toggle one" onClick={() => setVisible(!visible)}>Click here to Search by Cocktail</button>}
-      <RandomCocktailGenerator />
+      {/* <RandomCocktailGenerator /> */}
       <Footer />
     </div>
   );
