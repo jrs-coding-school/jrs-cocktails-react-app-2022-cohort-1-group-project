@@ -6,73 +6,80 @@ import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import './DrinkCard.css'
 import { useAxios } from '../../services/axios.service'
 import { useLocalStorage } from '../../services/localstorage.service'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
-export default function DrinkCard ( { idDrink, strDrink, strDrinkThumb, isFav, setIsFav, setIsNotFav } ) {
+export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav, setIsFav, setIsNotFav }) {
 
   const http = useAxios();
+  const navigate = useNavigate();
   const localStorageService = useLocalStorage();
   const user = localStorageService.getUser();
+  const heartIcon = document.getElementsByClassName('#icon-container')
 
-  function handleHeartClicked () {
-///-----------delete drink logic ----------------///    
-    if ( isFav ) {
+  function handleHeartClicked() {
+    ///-----------delete drink logic ----------------///    
+    if (isFav) {
       // remove from favorites in database
       var userId = user.id
 
-      http.deleteFavorite( userId, idDrink )
-        .then( results => {
+      http.deleteFavorite(userId, idDrink)
+        .then(results => {
           // remove from favorites on Favs array
-          if ( setIsNotFav ) {
-            setIsNotFav( idDrink )
+          if (setIsNotFav) {
+            setIsNotFav(idDrink)
+            // return;
           }
-        } )
-        .catch( err => console.error( err ) )
+        })
+        .catch(err => console.error(err))
 
     } else {
-///---------------add drink logic ------------------//
+      ///---------------add drink logic ------------------//
       var userId = user.id
 
-      http.addNewFavorite( userId, idDrink )
-        .then( results => {
+      http.addNewFavorite(userId, idDrink)
+        .then(results => {
           // add to Favs array here
-          if(setIsFav){
+          if (setIsFav) {
             setIsFav(idDrink)
           }
-          console.log( userId, idDrink )
+          // return;
+          console.log(userId, idDrink)
         })
-        .catch( err => console.error( err ) )
+        .catch(err => console.error(err))
     }
   }
 
+  function handleCardClicked(idDrink) {
+    if (!heartIcon) {
+      navigate(`/cocktail/${idDrink}`)}
+  }
 
   const outlinedHeart = (
     <div className='icon-container'
       onClick={handleHeartClicked}>
       <FontAwesomeIcon icon={faHeartRegular} />
-    </div> )
+    </div>)
 
   const solidHeart = (
     <div className='icon-container'
       onClick={handleHeartClicked}>
       <FontAwesomeIcon icon={faHeartSolid} />
-    </div> )
+    </div>)
 
   return (
-    <Link to={`/cocktail/${idDrink}`}>
-      <div className='drink-card-root'>
-        <div className="image-container">
-          <img src={strDrinkThumb} />
-        </div>
-        <h3>
-          {strDrink}
-        </h3>
-        <div className="icon-container">
-          {!isFav ?
-            outlinedHeart
-            : solidHeart}
-        </div>
+    <div className='drink-card-root'
+      onClick={handleCardClicked}>
+      <div className="image-container">
+        <img src={strDrinkThumb} />
       </div>
-    </Link>
+      <h3>
+        {strDrink}
+      </h3>
+      <div className="icon-container">
+        {!isFav ?
+          outlinedHeart
+          : solidHeart}
+      </div>
+    </div>
   )
 }
