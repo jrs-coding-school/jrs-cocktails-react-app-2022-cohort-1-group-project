@@ -73,6 +73,6 @@ export default function DrinkCard ( { idDrink, strDrink, strDrinkThumb, isFav, s
             : solidHeart}
         </div>
       </div>
-    </Link>
+     </Link>
   )
 }

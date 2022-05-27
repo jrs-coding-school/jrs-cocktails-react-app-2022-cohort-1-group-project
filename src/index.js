@@ -10,6 +10,7 @@ import IngredientsLandingPage from './components/ingredientsLandingPage/Ingredie
 import IndividualDrinkPage from './components/individualDrinkPage/IndividualDrinkPage';
 import MyDrinksPage from './components/myDrinks/MyDrinksPage';
 import NavBar from './components/navBar/NavBar';
+import Loading from './components/loading/Loading';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

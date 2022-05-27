@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react'
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlassCheers } from '@fortawesome/free-solid-svg-icons'
 import { useParams } from 'react-router-dom';
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
 import DrinkCard from '../drinkCard/DrinkCard'
+import Loading from '../loading/Loading'
 import './MyDrinks.css'
 
 export default function MyDrinksPage ( { } ) {
@@ -10,7 +14,7 @@ export default function MyDrinksPage ( { } ) {
   const localStorageService = useLocalStorage();
 
   const [ favDrinks, setFavDrinks ] = useState( [] );
-  const [ isLoading, setIsLoading ] = useState( false )
+  const [ isLoading, setIsLoading ] = useState( true )
 
   const http = useAxios();
 
@@ -25,6 +29,11 @@ export default function MyDrinksPage ( { } ) {
         setFavDrinks( response.data.drinks )
       } )
       .catch( err => console.error( err ) )
+      .then( () => {
+        setTimeout( () => {
+          setIsLoading( false )
+        }, 1250 );
+      } )
   }
 
   useEffect( () => {
@@ -32,24 +41,29 @@ export default function MyDrinksPage ( { } ) {
     getUserFavorites( user?.id )
   }, [] )
 
-  // ------------------NEED TO COMPLETE LOADING LOGIC-----------------//
 
   if ( isLoading ) {
     return (
       <div>
-        Loading...
+        <Loading />
       </div>
     )
   } else if ( favDrinks.length == 0 ) {
     return (
-      <div>
-        <h1>NO FAV DRINKS YET :(</h1>
+      <div className='no-favs-container'>
+        <h1>No Favorites... 
+          <br/>
+          Yet! 
+          <br/>
+          <br/>
+          <FontAwesomeIcon icon={faGlassCheers} id="icon" size="2x"/>
+        </h1>
       </div>
     )
   } else {
     return (
       <div className="drinks-page-root">
-        <h1> MY DRINKS</h1>
+        <h1> Favorite Cocktails</h1>
         <div className='drink-cards-container'>
           {favDrinks.map( ( fav ) => (
             <DrinkCard key={fav.idDrink}

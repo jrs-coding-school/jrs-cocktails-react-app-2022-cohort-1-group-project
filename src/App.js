@@ -14,6 +14,8 @@ function App() {
 
   return (
     <div className="App">
+      <div class="logo"><b>Sip, sip, <br/> hooray!</b></div>
+
       {visible ? <DrinkSearch /> : <AdvancedSearch />}
     
       {visible ? <button className="toggle two" onClick={() => setVisible(!visible)}>Click here to Search by Ingredients</button> 
