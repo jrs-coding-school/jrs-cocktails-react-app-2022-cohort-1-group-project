@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
@@ -16,6 +16,11 @@ export default function UserSignUp() {
     username: '',
     password: '',
   })
+  const [isUsernameTaken, setIsUsernameTaken] = useState(true);
+
+  const usernameRef = useRef(null);
+  const passwordRef = useRef(null)
+
 
   function attemptSignUp(formData) {
     http.createNewUser(formData)
@@ -28,6 +33,7 @@ export default function UserSignUp() {
       }
       )
   }
+
 
   function handleChange(e) {
     let value = e.target.value
@@ -42,10 +48,37 @@ export default function UserSignUp() {
 
   function handleFormSubmit(e) {
     e.preventDefault()
-    if (formData.username && formData.password) {
+    if (formData.username && formData.password && checkIfUsernameIsTaken) {
       attemptSignUp(formData);
     }
   }
+// -----CHECK IF USERNAME IS TAKEN --------------
+
+  function checkIfUsernameIsTaken() {
+    http.getRouteByUsername(formData.username)
+        .then((res) => {
+          console.log('the get route by username was sent! It returned this')
+          console.log(formData.username)
+            setIsUsernameTaken(true)
+        })
+        .catch((err) => {
+            let statusCode = err.response.statusCode
+            if (statusCode == 404) {
+                setIsUsernameTaken(false)
+            } else if (err.response.status == 401) {
+              setIsUsernameTaken(true)
+            } else {
+              console.err(err)
+            }
+        })             
+}
+
+// useEffect(() => {
+//     clearTimeout(timeoutRef.current)
+//     timeoutRef.current = setTimeout(() => { checkIfUsernameIsTaken() }, 500)
+
+// }, [formData.username])
+
 
   return (
     <div className='user-pages'>
@@ -62,8 +95,8 @@ export default function UserSignUp() {
               name="username"
               value={formData.username}
               onChange={handleChange}
-              // ref={usernameRef}
-              placeholder="username"
+              ref={usernameRef}
+              placeholder="Username"
               id="username"
               required
             />
@@ -77,8 +110,8 @@ export default function UserSignUp() {
               name="password"
               value={formData.password}
               onChange={handleChange}
-              // ref={passwordRef}
-              placeholder="password"
+              ref={passwordRef}
+              placeholder="Password"
               id="password"
               required
             />
@@ -88,11 +121,11 @@ export default function UserSignUp() {
             type="submit"
             className='sign-up-button'
           >
-            Sip Sip Hooray! Create my account!
+            Sip Sip Hooray! <br/> Create my account!
           </button>
           <br/>
           <br/>
-          <p>Already a member?
+          <p className='cta-switch-container'>Already a member?
             <Link to="/login">
               <p>Let's log in!</p>
             </Link>
