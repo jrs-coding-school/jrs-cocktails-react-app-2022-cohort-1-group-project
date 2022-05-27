@@ -2,16 +2,16 @@
     display: grid;
     place-items: center;
 }
-.user-pages .login-form, .sign-up-form {
+.user-pages .login-form, .user-pages .sign-up-form {
     background-color: #A5AF7F;
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
+    border-radius: .75rem;
     
     width: 30rem;
     margin: auto;
     align-items: center;
     text-align: center;
+
+    padding: 3rem;
 }
 
 .user-pages .sign-up-form {
@@ -19,16 +19,30 @@
 }
     
 
-
-.user-pages .input-container {
+.user-pages .input-container, .user-pages button {
     margin: auto;
     width: 20rem;
+
+    font-size: 18pt;
+    
 }
 
-.user-pages input {
+.user-pages input, .user-pages button{
     border: none;
     height: 4rem;
     width: 100%;
+    
+}
+
+.user-pages input {
+    text-align: left;
+    padding: .5rem 1rem;
+
+    font-size: 14pt;
+}
+
+.user-pages button {
+    background-color: #757e53;
 }
 
 .user-pages  .password-input {
@@ -39,3 +53,7 @@
     display:none;
 }
 
+.cta-switch-container p {
+    margin: 0;
+    padding: 1rem;
+}

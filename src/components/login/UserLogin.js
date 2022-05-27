@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import './UserLoginSignup.css'
 import { Link} from "react-router-dom";
 import { useAxios } from '../../services/axios.service';
@@ -39,7 +39,7 @@ export default function LoginForm() {
           navigate('/')
         }).catch(err => {
           setIsLoading(false)
-
+console.log(err)
           setFormData({ username: '', password: '' });
         })
     }
@@ -52,6 +52,10 @@ export default function LoginForm() {
       attemptLogIn()
       }, 1000)
   }
+
+  useEffect (() => {
+    usernameRef.current.focus()}, [])
+  
 
 
   return (
@@ -70,7 +74,7 @@ export default function LoginForm() {
           value={formData.username}
           onChange={handleChange}
           ref={usernameRef}
-          placeholder="username"
+          placeholder="Username"
           id="username"
           required
         />
@@ -85,7 +89,7 @@ export default function LoginForm() {
           value={formData.password}
           onChange={handleChange}
           ref={passwordRef}
-          placeholder="password"
+          placeholder="Password"
           id="password"
           required
         />
@@ -95,15 +99,15 @@ export default function LoginForm() {
           type="submit"
           className='login-button'
         >
-         Login, Sip Sip Hooray!
+         Sip Sip Hooray!
         </button>
         <br/>
         <br/>
-        <span>Not a member? 
+        <p className="cta-switch-container">Not a member? 
             <Link to="/signup">
               <p>Sign up now</p>
             </Link>
-        </span>
+        </p>
       </div>
 
     </form>

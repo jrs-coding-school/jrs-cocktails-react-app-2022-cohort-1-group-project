@@ -6,6 +6,7 @@ import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import './DrinkCard.css'
 import { useAxios } from '../../services/axios.service'
 import { useLocalStorage } from '../../services/localstorage.service'
+import { Link } from 'react-router-dom'
 
 export default function DrinkCard ( { idDrink, strDrink, strDrinkThumb, isFav, setIsFav, setIsNotFav } ) {
 
@@ -58,18 +59,20 @@ export default function DrinkCard ( { idDrink, strDrink, strDrinkThumb, isFav, s
     </div> )
 
   return (
-    <div className='drink-card-root'>
-      <div className="image-container">
-        <img src={strDrinkThumb} />
+    <Link to={`/cocktail/${idDrink}`}>
+      <div className='drink-card-root'>
+        <div className="image-container">
+          <img src={strDrinkThumb} />
+        </div>
+        <h3>
+          {strDrink}
+        </h3>
+        <div className="icon-container">
+          {!isFav ?
+            outlinedHeart
+            : solidHeart}
+        </div>
       </div>
-      <h3>
-        {strDrink}
-      </h3>
-      <div className="icon-container">
-        {!isFav ?
-          outlinedHeart
-          : solidHeart}
-      </div>
-    </div>
+    </Link>
   )
 }
