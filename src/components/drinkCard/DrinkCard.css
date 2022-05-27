@@ -5,7 +5,7 @@
     position: relative;
     border-radius: 1rem;
     text-align: center;
-    background-color: rgba(241, 241, 241, 0.827);
+    background-color: rgba(241, 241, 241, 0.622);
     }
 
 .drink-card-root .icon-container{
@@ -16,7 +16,7 @@
 }
 
 .drink-card-root img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 7em;
+    max-height: 7em;
     border-radius: 50%;
 }

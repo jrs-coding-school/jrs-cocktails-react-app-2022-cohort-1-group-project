@@ -7,9 +7,10 @@
 
 .drinks-page-root .drink-cards-container{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin: auto;
     gap: 10px;  
-    max-width: 65vw;  
+    max-width: 50vw;  
 }

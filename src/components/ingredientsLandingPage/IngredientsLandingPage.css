@@ -5,6 +5,10 @@
     
 }
 
+.ingredients-page-root h1 .header {
+    text-transform: lowercase;
+}
+
 .ingredients-page-root .drink-cards-container{
     display: flex;
     flex-wrap: wrap;

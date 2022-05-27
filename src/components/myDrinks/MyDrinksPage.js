@@ -10,13 +10,18 @@ export default function MyDrinksPage ( { } ) {
   const localStorageService = useLocalStorage();
 
   const [ favDrinks, setFavDrinks ] = useState( [] );
-  const [isLoading, setIsLoading] = useState(false)
+  const [ isLoading, setIsLoading ] = useState( false )
 
   const http = useAxios();
+
+  function removeDrinkFromFavList ( id ) {
+    setFavDrinks( favDrinks.filter( drink => drink.idDrink !== id ) );
+  }
 
   function getUserFavorites ( userId ) {
     http.getUserFavoritesById( userId )
       .then( ( response ) => {
+        console.log( response.data.drinks )
         setFavDrinks( response.data.drinks )
       } )
       .catch( err => console.error( err ) )
@@ -28,9 +33,9 @@ export default function MyDrinksPage ( { } ) {
   }, [] )
 
   // ------------------NEED TO COMPLETE LOADING LOGIC-----------------//
-  
-  if(isLoading){
-    return(
+
+  if ( isLoading ) {
+    return (
       <div>
         Loading...
       </div>
@@ -39,8 +44,8 @@ export default function MyDrinksPage ( { } ) {
     return (
       <div>
         <h1>NO FAV DRINKS YET :(</h1>
-      </div>  
-  )
+      </div>
+    )
   } else {
     return (
       <div className="drinks-page-root">
@@ -50,6 +55,9 @@ export default function MyDrinksPage ( { } ) {
             <DrinkCard key={fav.idDrink}
               {...fav}
               isFav={true}
+              setIsNotFav={removeDrinkFromFavList}
+              favDrinks={favDrinks}
+              setFavDrinks={setFavDrinks}
             />
           ) )}
         </div>
