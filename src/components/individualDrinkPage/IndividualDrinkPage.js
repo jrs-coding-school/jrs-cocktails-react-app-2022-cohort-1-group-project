@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useAxios } from '../../services/axios.service';
-import { useLocalStorage } from '../../services/localstorage.service';
-
+import Ratings from '../ratings/Ratings';
 import './IndividualDrinkPage.css';
 
 export default function IndividualDrinkPage() {
 
-  // const localStorageService = useLocalStorage();
   const http = useAxios();
   const { id } = useParams();
   const [drink, setDrink] = useState({});
@@ -21,13 +19,15 @@ export default function IndividualDrinkPage() {
       .catch(err => console.error(err))
   }
 
+
   useEffect(() => {
     getDrinkById(id);
   }, [])
 
   return (
     <div className='individual-drink-page-root'>
-      <img className='ind-drink-image' src={drink.strDrinkThumb} />
+      <div className='individual-drink-page-card'>
+        <img className='ind-drink-image' src={drink.strDrinkThumb} />
         <h1 className='ind-drink-name'>{drink.strDrink}</h1>
         <div className='ingredients-container'>
           <h3>Ingredients:</h3>
@@ -37,6 +37,8 @@ export default function IndividualDrinkPage() {
           <p className='ind-ingredients'>{drink.strIngredient4}</p>
           <p className='ind-ingredients'>{drink.strIngredient5}</p>
           <p className='ind-ingredients'>{drink.strIngredient6}</p>
+          <p className='ind-ingredients'>{drink.strIngredient7}</p>
+          <p className='ind-ingredients'>{drink.strIngredient8}</p>
         </div>
         <div className='instructions-container'>
           <p className='ind-instructions'>{drink.strMeasure1}</p>
@@ -45,8 +47,11 @@ export default function IndividualDrinkPage() {
           <p className='ind-instructions'>{drink.strMeasure4}</p>
           <p className='ind-instructions'>{drink.strMeasure5}</p>
           <p className='ind-instructions'>{drink.strMeasure6}</p>
+          <p className='ind-instructions'>{drink.strMeasure7}</p>
         </div>
         <p className='drink-instructions'>{drink.strInstructions}</p>
+      </div>
+      <Ratings />
     </div>
   )
 }

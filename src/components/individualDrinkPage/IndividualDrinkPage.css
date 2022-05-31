@@ -1,5 +1,5 @@
-.individual-drink-page-root {
-    background-color: lightblue;
+.individual-drink-page-card {
+    background-color: rgba(241, 241, 241, 0.622);
     width: 40em;
     margin: auto;
     margin-top: 3em;
@@ -21,6 +21,7 @@
     height: 20em;
     border-radius: 50%;
     opacity: 1;
+    margin-top: 15px;
 }
 
 .ingredients-container{
@@ -40,3 +41,4 @@
 .drink-instructions {
     padding: 20px;
 }
+
