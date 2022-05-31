@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useAxios } from '../../services/axios.service';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 import './Ratings.css'
 
 
-export default function Ratings({ drinkId, userId }) {
+export default function Ratings({ userId, drinkId }) {
 
 
   const http = useAxios();
@@ -31,8 +30,8 @@ export default function Ratings({ drinkId, userId }) {
   function addNewReview() {
     http.addReview(userId, drinkId, review.rating, review.comment)
       .then((response) => {
-        console.log(response.data.response)
-        setReview(response.data.results[0])
+        console.log(review)
+        setReview(response.data.results)
       })
       .catch(err => console.error(err))
   }
@@ -52,7 +51,7 @@ export default function Ratings({ drinkId, userId }) {
       <h3 className='user-rating'>Reviews:</h3>
       <div className='review-container'>
         <div className='user-rating-container'>
-          <p className='user-rating'>{showReview.rating}<FontAwesomeIcon icon={faStar} /></p>
+          <p className='user-rating'>{showReview.rating} &#9733;</p>
 
 
         </div>
@@ -62,7 +61,7 @@ export default function Ratings({ drinkId, userId }) {
       </div>
       <h4>Leave a review:</h4>
       <div className='leave-review'>
-        <select className='select-star-bar' onChange={e => {
+        {/* <select className='select-star-bar' onChange={e => {
           setReview(e.target.value)
         }}>
           <option value="one"> 1 &#9733;</option>
@@ -71,12 +70,10 @@ export default function Ratings({ drinkId, userId }) {
           <option value="four">4 &#9733;</option>
           <option value="five">5 &#9733;</option>
 
-        </select>
+        </select> */}
         <textarea className="review-box" type="search" placeholder='Leave Review...' onChange={e => setReview(e.target.value)}></textarea>
         <button className='submit-review'>Submit</button>
       </div>
-      <p>{review.rating}</p>
-      <p>{review.comment}</p>
     </form>
 
   )
