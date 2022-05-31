@@ -18,7 +18,7 @@ function login({ username, password }) {
     return axios.post(`${URL}/users/login`, { username, password })
 }
 
-function addReview({ userId, drinkId, rating, comment }) {
+function addReview( userId, drinkId, rating, comment ) {
     return axios.post(`${URL}/users/review`, { userId, drinkId, rating, comment })
 }
 

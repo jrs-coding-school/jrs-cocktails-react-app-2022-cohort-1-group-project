@@ -25,7 +25,7 @@ root.render(
           <Route path="/cocktails/:spirit" element={<IngredientsLandingPage />}></Route>
           <Route path="/cocktails/:spirit/:ingredient" element={<IngredientsLandingPage />}></Route>
           
-          <Route path="/cocktail/:id" element={<IndividualDrinkPage />}></Route>
+          <Route path="/cocktail/:drinkId" element={<IndividualDrinkPage />}></Route>
           
           <Route path="/my-drinks" element={<MyDrinksPage />}></Route>
           <Route path="*" element={<div>404 - page does not exist</div>}></Route>

@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import { useAxios } from '../../services/axios.service';
+import { useLocalStorage } from '../../services/localstorage.service';
 import Ratings from '../ratings/Ratings';
 import './IndividualDrinkPage.css';
 
 export default function IndividualDrinkPage() {
 
   const http = useAxios();
-  const { id } = useParams();
+  const { drinkId } = useParams();
+  const localStorageService = useLocalStorage();
+  const user = localStorageService.getUser();
   const [drink, setDrink] = useState({});
+  
+
 
   function getDrinkById(id) {
     http.getDrinkById(id)
@@ -19,9 +24,8 @@ export default function IndividualDrinkPage() {
       .catch(err => console.error(err))
   }
 
-
   useEffect(() => {
-    getDrinkById(id);
+    getDrinkById(drinkId);
   }, [])
 
   return (
@@ -51,7 +55,8 @@ export default function IndividualDrinkPage() {
         </div>
         <p className='drink-instructions'>{drink.strInstructions}</p>
       </div>
-      <Ratings />
+      <Ratings drinkId={drinkId}
+      userId={user.id} />
     </div>
   )
 }
