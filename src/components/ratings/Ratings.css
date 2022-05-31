@@ -33,13 +33,17 @@
 .review-box {
     border: none;
     width: 35em;
-    height: 3.5em;
+    height: 2.5em;
     background: white;
     margin: 0;
     padding: 7px 8px;
     font-size: 14px;
     color: inherit;
     border-radius: 4px 0 0 4px;
+    font-size: 14pt;
+}
+
+.user-rating {
     font-size: 14pt;
 }
 

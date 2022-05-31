@@ -30,7 +30,7 @@ export default function IndividualDrinkPage() {
         <img className='ind-drink-image' src={drink.strDrinkThumb} />
         <h1 className='ind-drink-name'>{drink.strDrink}</h1>
         <div className='ingredients-container'>
-          <h3>Ingredients:</h3>
+          {/* <h3>Ingredients:</h3> */}
           <p className='ind-ingredients'>{drink.strIngredient1}</p>
           <p className='ind-ingredients'>{drink.strIngredient2}</p>
           <p className='ind-ingredients'>{drink.strIngredient3}</p>
