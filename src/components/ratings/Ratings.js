@@ -31,7 +31,6 @@ export default function Ratings({ userId, drinkId }) {
     http.addReview(userId, drinkId, review.rating, review.comment)
       .then((response) => {
         console.log(review)
-        setReview(response.data.results)
       })
       .catch(err => console.error(err))
   }
@@ -61,17 +60,26 @@ export default function Ratings({ userId, drinkId }) {
       </div>
       <h4>Leave a review:</h4>
       <div className='leave-review'>
-        {/* <select className='select-star-bar' onChange={e => {
-          setReview(e.target.value)
+        <select className='select-star-bar' onChange={e => {
+          setReview({
+            ...review,
+            rating: Number(e.target.value)})
         }}>
-          <option value="one"> 1 &#9733;</option>
-          <option value="two">2 &#9733;</option>
-          <option value="three">3 &#9733;</option>
-          <option value="four">4 &#9733;</option>
-          <option value="five">5 &#9733;</option>
+          <option value="1">1 &#9733;</option>
+          <option value="2">2 &#9733;</option>
+          <option value="3">3 &#9733;</option>
+          <option value="4">4 &#9733;</option>
+          <option value="5">5 &#9733;</option>
 
-        </select> */}
-        <textarea className="review-box" type="search" placeholder='Leave Review...' onChange={e => setReview(e.target.value)}></textarea>
+        </select>
+        <textarea className="review-box" 
+        placeholder='Leave Review...' 
+        value={review.comment}
+        onChange={e => {
+          setReview({
+            ...review,
+            comment: e.target.value})
+        }}></textarea>
         <button className='submit-review'>Submit</button>
       </div>
     </form>

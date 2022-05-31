@@ -19,7 +19,7 @@ function login({ username, password }) {
 }
 
 function addReview( userId, drinkId, rating, comment ) {
-    return axios.post(`${URL}/users/review`, { userId, drinkId, rating, comment })
+    return axios.post(`${URL}/reviews`, { userId, drinkId, rating, comment })
 }
 
 // NOTE -> CHANGED PARAMS TO BE OUT OF AN OBJECT 
