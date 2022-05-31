@@ -14,7 +14,7 @@ export default function IndividualDrinkPage() {
     http.getDrinkById(id)
       .then((response) => {
         console.log(response.data)
-        setDrink(response.data.drink);
+        setDrink(response.data.drink[0]);
       })
       .catch(err => console.error(err))
   }

@@ -1,7 +1,6 @@
 .review-container {
     background-color: rgba(241, 241, 241, 0.822);
     width: 300px;
-    /* margin: auto; */
     margin-top: 10px;
     padding: 5px;
     border-radius: 10px;
@@ -12,22 +11,23 @@
 }
 
 .leave-review {
-    display: block;
+    /* display: block; */
 }
 
 .select-star-bar {
-    flex-direction: column;
+    /* flex-direction: column; */
     border: none;
     border-right: 1px solid black;
     padding-top: 1em;
     place-items: center;
-    height: 3.5em;
+    height: 3.3em;
     background: white;
     margin: 0;
     font-size: 14px;
     color: inherit;
     border-radius: 4px 0 0 4px;
     font-size: 14pt;
+    position: absolute;
 }
 
 .review-box {
@@ -36,14 +36,26 @@
     height: 2.5em;
     background: white;
     margin: 0;
+    margin-left: 57px;
     padding: 7px 8px;
     font-size: 14px;
     color: inherit;
-    border-radius: 4px 0 0 4px;
     font-size: 14pt;
+    position: relative;
 }
 
 .user-rating {
     font-size: 14pt;
+}
+
+.submit-review {
+    position: absolute;
+    width: 5em;
+    height: 62px;
+    margin-bottom: 7em;
+    background-color: white;
+    border: 0;
+    border-left: 1px solid black;
+    border-radius: 0 4px 4px 0;
 }
 

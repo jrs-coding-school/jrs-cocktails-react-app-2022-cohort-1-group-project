@@ -11,7 +11,9 @@ export default function Ratings() {
 
   const http = useAxios();
   const { id } = useParams();
-  const [showReview, setShowReview] = useState({});
+  const [showReview, setShowReview] = useState([]);
+  const [addReview, setAddReview] = useState({});
+
 
   function getUserReviewByDrinkId(id) {
     http.getUserReviewByDrinkId(id)
@@ -23,9 +25,18 @@ export default function Ratings() {
   }
 
 
+  function addAReview({review}) {
+    http.addReview(review)
+    .then((response) => {
+    setAddReview(response.data.results)
+    })
+    .catch(err => console.error(err))
+  }
+
 
   useEffect(() => {
     getUserReviewByDrinkId(id);
+    addAReview(id);
   }, [])
 
 
@@ -44,15 +55,16 @@ export default function Ratings() {
       </div>
         <h4>Leave a review:</h4>
       <div className='leave-review'>
-        {/* <select className='select-star-bar'>
-                <option name="one"> 1</option>
-                <option name="two">2</option>
-                <option name="three">3</option>
-                <option name="four">4</option>
-                <option name="fix">5</option>
+        <select className='select-star-bar'>
+                <option name="one"> 1 &#9733;</option>
+                <option name="two">2 &#9733;</option>
+                <option name="three">3 &#9733;</option>
+                <option name="four">4 &#9733;</option>
+                <option name="fix">5 &#9733;</option>
              
-            </select> */}
+            </select>
         <textarea className="review-box" type="search"></textarea>
+        <button className='submit-review' onSubmit={addReview}>Submit</button>
       </div>
     </form>
 

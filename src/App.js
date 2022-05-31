@@ -14,7 +14,7 @@ function App() {
 
   return (
     <div className="App">
-      <div class="logo"><b>Sip, sip, <br/> hooray!</b></div>
+      <div className="logo"><b>Sip, sip, <br/> hooray!</b></div>
 
       {visible ? <DrinkSearch /> : <AdvancedSearch />}
     
