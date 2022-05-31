@@ -36,8 +36,14 @@ const signUpButton = (
   <button onClick={() => {
       navigate('/signup')
   }}>
-     Sign up  <span>|</span>
+     Sign up
   </button>
+)
+
+const myDrinksButton = (
+  <Link to={"/my-drinks"}>
+  <button type='button'>My Drinks</button>
+</Link>
 )
 
   return (
@@ -47,15 +53,12 @@ const signUpButton = (
         <Link to={"/"}>
           <button type='button'>Home</button>
         </Link>
-        <span>|</span>
-        <Link to={"/my-drinks"}>
-          <button type='button'>My Drinks</button>
-        </Link>
-
+        {user ? <span>|</span> : ''}
+        {user ? myDrinksButton : ''}
       </div>
       <div className='nav-bar-right'> 
         {user ? '' : signUpButton }
-       
+        {user ? '' : <span>|</span>}
         {user ? logoutButton : loginButton } 
        
       </div>
