@@ -1,3 +1,18 @@
-.loading-root{
-    
+.shaker-container {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    padding-top: 5%;
+}
+
+.shaker-container .shaker {
+    border-radius: 50%;
+     background-color: rgba(255, 192, 203, 0);
+}
+
+.loading-banner-root {
+    background-color: rgba(241, 241, 241, 0.622);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
 }

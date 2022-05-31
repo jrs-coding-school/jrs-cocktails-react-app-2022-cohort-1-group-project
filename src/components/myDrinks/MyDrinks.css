@@ -1,3 +1,15 @@
+
+.no-favs-container{
+    margin-top: 10%;
+    text-align: center;
+    background-color: #f1f1f1a0;
+    padding: 1.5rem;
+}
+
+.no-favs-container #icon{
+    color: rgb(249, 79, 107);
+}
+
 .drinks-page-root h1{
     text-align: center;
     background-color: #f1f1f1a0;

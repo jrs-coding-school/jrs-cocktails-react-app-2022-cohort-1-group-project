@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useAxios } from '../../services/axios.service';
 import DrinkCard from '../drinkCard/DrinkCard'
+import Loading from '../loading/Loading'
 import './IngredientsLandingPage.css'
 
 export default function IngredientsLandingPage () {
@@ -10,6 +11,7 @@ export default function IngredientsLandingPage () {
 
   const [ drinks, setDrinks ] = useState( [] );
   const [ favDrinks, setFavDrinks ] = useState( [] );
+  const [ isLoading, setIsLoading ] = useState( true );
 
   const http = useAxios();
   const { ingredient, spirit } = useParams();
@@ -30,6 +32,11 @@ export default function IngredientsLandingPage () {
         setDrinks( response.data.drink );
       } )
       .catch( err => console.error( err ) )
+      .then( () => {
+        setTimeout( () => {
+          setIsLoading( false )
+        }, 1250 );
+      } )
   }
 
   function getDrinksByIngredients ( spirit, ingredient ) {
@@ -39,9 +46,13 @@ export default function IngredientsLandingPage () {
         setDrinks( response.data.drinks );
       } )
       .catch( err => console.error( err ) )
+      .then( () => {
+        setTimeout( () => {
+          setIsLoading( false )
+        }, 1250 );
+      } )
   }
 
-  //---------IS NEW VALUE A DRINK ID (STRING)? OR AN OBJECT (ENTIRE DRINK)? ----------//
   function addDrinkToFavList ( idDrink ) {
     setFavDrinks( [ ...favDrinks, idDrink ] )
   }
@@ -61,28 +72,34 @@ export default function IngredientsLandingPage () {
 
     } else if ( spirit && ingredient ) {
       getDrinksByIngredients( spirit, ingredient );
-    } else {
-      // get all drinks
-    }
+    } 
   }, [] )
 
-  return (
-    <div className="ingredients-page-root">
-      <h1> Cocktails with <br />
-        <span className='header'>
-          {spirit && ingredient ? `${spirit} & ${ingredient}` : spirit}
-        </span>
-      </h1>
-      <div className='drink-cards-container'>
-        {drinks.map( ( drink ) => (
-          <DrinkCard key={drink.idDrink}
-            {...drink}
-            isFav={isDrinkInFavorteList(drink.idDrink)}
-            setIsNotFav={removeDrinkFromFavList}
-            setIsFav={addDrinkToFavList}
-          />
-        ) )}
+  if ( isLoading ) {
+    return (
+      <div>
+        <Loading />
       </div>
-    </div>
-  )
+    )
+  } else {
+    return (
+      <div className="ingredients-page-root">
+        <h1> Cocktails with <br />
+          <span className='header'>
+            {spirit && ingredient ? `${spirit} & ${ingredient}` : spirit}
+          </span>
+        </h1>
+        <div className='drink-cards-container'>
+          {drinks.map( ( drink ) => (
+            <DrinkCard key={drink.idDrink}
+              {...drink}
+              isFav={isDrinkInFavorteList( drink.idDrink )}
+              setIsNotFav={removeDrinkFromFavList}
+              setIsFav={addDrinkToFavList}
+            />
+          ) )}
+        </div>
+      </div>
+    )
+  }
 }
