@@ -1,17 +1,22 @@
 .user-pages body {
     display: grid;
     place-items: center;
+    font: inherit;
+    color: inherit;
 }
 .user-pages .login-form, .user-pages .sign-up-form {
     background-color: #A5AF7F;
-    border-radius: .75rem;
-    
+
     width: 30rem;
     margin: auto;
     align-items: center;
     text-align: center;
 
-    padding: 3rem;
+    margin: auto;
+    margin-top: 3em;
+    padding: 15px 24px 5px 15px;
+    border-radius: 15px;
+    opacity: .85;
 }
 
 .user-pages .sign-up-form {

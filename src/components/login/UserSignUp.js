@@ -89,8 +89,8 @@ useEffect(() => {
     <div className='user-pages'>
       <form className="sign-up-form"
         onSubmit={handleFormSubmit}>
-        <h2>Let's get started!</h2>
-        <h1>You're taking the first step to saving your favorite cocktails!</h1>
+        <h2>Sip Sip Hooray!</h2>
+        <h1>You're taking the first step to saving your favorite cocktails</h1>
         <div className='input-container'>
           <div className='sign-up-input'>
             <label htmlFor="username">
@@ -125,14 +125,13 @@ useEffect(() => {
           <button
             type="submit"
             className='sign-up-button'
-          >
-            Sip Sip Hooray! <br/> Create my account!
+          >Create my account!
           </button>
           <br/>
           <br/>
-          <p className='cta-switch-container'>Already a member?
+          <p className='cta-switch-container'>Already a member?<br/>
             <Link to="/login">
-              Let's log in!
+            Let's log in
             </Link>
           </p>
         </div>
@@ -143,81 +142,3 @@ useEffect(() => {
 }
 
 
-
-{/* 
-            // function attemptSignUp() {
-            //   e.preventDefault();
-            //   if (formData.email && formData.password) {
-            //     console.log(formData);
-            //     onSubmit(formData)
-            //   }
- */}
-
-//       <form className="sign-up-form"
-//         onSubmit={handleFormSubmit}>
-//         <h2>Ready to save your favorite cocktails?</h2>
-//         <h3>Create a Whiskey Business account today!</h3>
-
-//         <div>
-//           <label htmlFor="username">
-//             Username :
-//           </label>
-//           <input
-//             type="text"
-//             name="username"
-//             value={formData.email}
-//             onChange={onInputChanged}
-
-//             placeholder="username"
-//             id="username"
-//             required
-//           ></input>
-//         </div>
-
-//         <div>
-//           <label htmlFor="password">
-//             Password :
-//           </label>
-//           <input
-//             type="password"
-//             name="password"
-//             value={formData.username}  //To do: CHANGE! ex  value={formData.password}
-//             onChange={onInputChanged}
-
-//             placeholder="password"
-//             id="password"
-//             required
-//           ></input>
-//           <br />
-//         </div>
-//         <div>
-//           <label htmlFor="password">
-//             Confirm password :
-//           </label>
-
-//           <br />
-//         </div>
-//         <button
-//           type="submit"
-//         // disabled={formData.password != formData.password2} // TO DO: If the passwords do not match, trigger warning message, don't submit
-//         >
-//           {!isLoading ? 'Log in' : <div className='loader'> </div>}
-//         </button>
-
-//       </form>
-//       <div className='footer'>Footer</div>
-//     </div>
-//   )
-// }
-
-// // ~~~~~*Plan for page*~~~~
-// // <Nav Bar>
-// // Header: Sign up! Create your Whiskey Business Account
-// // Fields: First Name
-// //          Last Name
-// //          Username
-// //          Password
-// //          Confirm Password
-// //          *Maybe box to show pw
-// //   Submit Button
-// //  <Footer >
