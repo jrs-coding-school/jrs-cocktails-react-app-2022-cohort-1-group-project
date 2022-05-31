@@ -25,18 +25,18 @@ export default function Ratings() {
   }
 
 
-  function addAReview({review}) {
-    http.addReview(review)
-    .then((response) => {
-    setAddReview(response.data.results)
-    })
-    .catch(err => console.error(err))
-  }
+  // function addAReview({review}) {
+  //   http.addReview(review)
+  //   .then((response) => {
+  //   setAddReview(response.data.results)
+  //   })
+  //   .catch(err => console.error(err))
+  // }
 
 
   useEffect(() => {
     getUserReviewByDrinkId(id);
-    addAReview(id);
+    // addAReview(id);
   }, [])
 
 
@@ -64,7 +64,7 @@ export default function Ratings() {
              
             </select>
         <textarea className="review-box" type="search"></textarea>
-        <button className='submit-review' onSubmit={addReview}>Submit</button>
+        <button className='submit-review'>Submit</button>
       </div>
     </form>
 
