@@ -65,8 +65,8 @@ export default function LoginForm() {
     <div className='user-pages'>
       <form className="login-form"
         onSubmit={handleFormSubmit}>
-        <h1> LOGIN HEADING</h1>
-        <h2>Subtitle Lorem Ipsum</h2>
+        <h2> Welcome back </h2>
+        <h1>Let's find your account</h1>
         <div className='input-container'>
           <div className='login-input'>
             <label htmlFor="username">
@@ -102,7 +102,7 @@ export default function LoginForm() {
             type="submit"
             className='login-button'
           >
-            Sip Sip Hooray!
+              Login
           </button>
           <br />
           <br />
