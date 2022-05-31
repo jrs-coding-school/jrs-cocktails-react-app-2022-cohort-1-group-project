@@ -1,20 +1,18 @@
 import './DrinkCard.css'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart as faHeartRegular } from '@fortawesome/free-regular-svg-icons'
 import { faHeart as faHeartSolid } from '@fortawesome/free-solid-svg-icons'
 import './DrinkCard.css'
 import { useAxios } from '../../services/axios.service'
 import { useLocalStorage } from '../../services/localstorage.service'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav, setIsFav, setIsNotFav }) {
 
   const http = useAxios();
-  const navigate = useNavigate();
   const localStorageService = useLocalStorage();
   const user = localStorageService.getUser();
-  const heartIcon = document.getElementsByClassName('#icon-container')
 
   function handleHeartClicked() {
     ///-----------delete drink logic ----------------///    
@@ -49,11 +47,6 @@ export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav, set
     }
   }
 
-  function handleCardClicked(idDrink) {
-    if (!heartIcon) {
-      navigate(`/cocktail/${idDrink}`)}
-  }
-
   const outlinedHeart = (
     <div className='icon-container'
       onClick={handleHeartClicked}>
@@ -67,14 +60,17 @@ export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav, set
     </div>)
 
   return (
-    <div className='drink-card-root'
-      onClick={handleCardClicked}>
-      <div className="image-container">
-        <img src={strDrinkThumb} />
-      </div>
-      <h3>
-        {strDrink}
-      </h3>
+    <div className='drink-card-container'>
+      <Link to={`/cocktail/${idDrink}`}>
+        <div className='drink-card-root'>
+          <div className="image-container">
+            <img src={strDrinkThumb} />
+          </div>
+          <h3>
+            {strDrink}
+          </h3>
+        </div>
+      </Link>
       <div className="icon-container">
         {!isFav ?
           outlinedHeart
