@@ -11,7 +11,7 @@
     max-width: 75vw;
 }
 
-.ingredient-search {
+.ingredient-form .ingredient-search {
     border: none;
     width: 35em;
     height: 3.5em;
@@ -23,7 +23,7 @@
     font-size: 14pt;
 }
 
-.select-bar {
+.ingredient-form .select-bar {
     flex-direction: column;
     border: none;
     border-right: 1px solid black;
@@ -36,6 +36,10 @@
     color: inherit;
     border-radius: 4px 0 0 4px;
     font-size: 14pt;
+}
+
+.ingredient-form select {
+    text-transform: capitalize;
 }
 
 .ingredient-form .mag-glass[type="submit"] {
@@ -51,7 +55,7 @@
     cursor: pointer;
 }
 
-.ingredient-search[type="search"]::placeholder {
+.ingredient-form .ingredient-search[type="search"]::placeholder {
     color: #bbb;
     font-size: 14pt;
 }
@@ -60,7 +64,7 @@
     opacity: 1;
 }
 
-.ingredient-search[type="search"]:focus {
+.ingredient-form .ingredient-search[type="search"]:focus {
     outline: none;
 }
 

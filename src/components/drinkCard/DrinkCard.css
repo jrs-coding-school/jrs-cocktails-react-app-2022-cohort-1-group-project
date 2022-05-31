@@ -1,4 +1,4 @@
-.drink-card-root{
+.drink-card-container{
     width: fit-content;
     margin: auto;
     padding: 1rem;
@@ -15,6 +15,7 @@
     right: 0.75em;
     color: #F74447;
     z-index: 100;
+    padding: 1rem;
 }
 
 .drink-card-root img {
