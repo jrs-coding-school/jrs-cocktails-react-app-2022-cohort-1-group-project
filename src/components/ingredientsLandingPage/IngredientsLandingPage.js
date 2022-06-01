@@ -72,7 +72,7 @@ export default function IngredientsLandingPage () {
 
     } else if ( spirit && ingredient ) {
       getDrinksByIngredients( spirit, ingredient );
-    } 
+    }
   }, [] )
 
   if ( isLoading ) {
@@ -80,6 +80,10 @@ export default function IngredientsLandingPage () {
       <div>
         <Loading />
       </div>
+    )
+  } else if ( drinks.length == 0 ) {
+    return (
+      <p>Too Creative! We don't have any drinks with those two ingredients.</p>
     )
   } else {
     return (
