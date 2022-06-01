@@ -102,15 +102,16 @@ export default function LoginForm() {
             type="submit"
             className='login-button'
           >
-              Login
+            Login
           </button>
           <br />
           <br />
-          <p className="cta-switch-container">Not a member?
-            <Link to="/signup">
-              <p>Sign up now</p>
-            </Link>
-          </p>
+          <div className="cta-switch-container">
+            <p>Not a member?</p>
+              <Link to="/signup">
+                Sign up now
+              </Link>
+          </div>
         </div>
 
       </form>

@@ -5,7 +5,7 @@
     color: inherit;
 }
 .user-pages .login-form, .user-pages .sign-up-form {
-    background-color: #dfe4e0a1;
+    background-color: hsla(132, 8%, 88%, 0.631);
     backdrop-filter: blur(10px);
     
     width: 30rem;
@@ -20,7 +20,7 @@
 }
 
 .user-pages .sign-up-form {
-    background-color: #de8a40ba;
+    background-color: hsla(28, 8%, 88%, 0.73);
     backdrop-filter: blur(10px);
 }
     
@@ -33,6 +33,12 @@
     
 }
 
+/* .input-container {
+    margin: auto;
+    align-items: center;
+    place-items: center;
+} */
+
 .user-pages input, .user-pages button{
     border: none;
     height: 4rem;
@@ -40,15 +46,20 @@
     
 }
 
-.user-pages input {
+.user-pages input{
     text-align: left;
-    padding: .5rem 1rem;
+    padding-left: 1rem;
 
     font-size: 14pt;
 }
 
 .user-pages button {
     background-color: #757e53;
+    padding: 1rem;
+}
+
+.user-pages .sign-up-form button {
+    background-color: hsl(28, 51%, 50%);
 }
 
 .user-pages  .password-input {
@@ -59,7 +70,16 @@
     display:none;
 }
 
+
+.cta-switch-container {
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
+
 .cta-switch-container p {
     margin: 0;
-    padding: 1rem;
+    /* padding: 1rem; */
+    padding-bottom: .5;
 }
+
+

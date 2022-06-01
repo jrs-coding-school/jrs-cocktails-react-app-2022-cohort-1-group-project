@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect} from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
@@ -55,34 +55,34 @@ export default function UserSignUp() {
       attemptSignUp(formData);
     }
   }
-// -----CHECK IF USERNAME IS TAKEN --------------
+  // -----CHECK IF USERNAME IS TAKEN --------------
 
   function checkIfUsernameIsTaken() {
-    http.getUserbyUsername (formData.username)
-        .then((res) => {
-          console.log('the get route by username was sent! It returned this')
-          console.log(formData.username)
-            setIsUsernameTaken(true)
-        })
-        .catch((err) => {
-          console.log(err);
-            let statusCode = err.response.statusCode
-            if (statusCode == 404) {
-                setIsUsernameTaken(false)
-            } else if (err.response.status == 401) {
-              setIsUsernameTaken(true)
-            } 
-            // else {
-            //   console.err(err)
-            // }
-        })             
-}
+    http.getUserbyUsername(formData.username)
+      .then((res) => {
+        console.log('the get route by username was sent! It returned this')
+        console.log(formData.username)
+        setIsUsernameTaken(true)
+      })
+      .catch((err) => {
+        console.log(err);
+        let statusCode = err.response.statusCode
+        if (statusCode == 404) {
+          setIsUsernameTaken(false)
+        } else if (err.response.status == 401) {
+          setIsUsernameTaken(true)
+        }
+        // else {
+        //   console.err(err)
+        // }
+      })
+  }
 
-useEffect(() => {
+  useEffect(() => {
     clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => { checkIfUsernameIsTaken() }, 500)
 
-}, [formData.username])
+  }, [formData.username])
 
 
   return (
@@ -127,13 +127,14 @@ useEffect(() => {
             className='sign-up-button'
           >Create my account!
           </button>
-          <br/>
-          <br/>
-          <p className='cta-switch-container'>Already a member?<br/>
-            <Link to="/login">
-            Let's log in
-            </Link>
-          </p>
+          <br />
+          <br />
+          <div className='cta-switch-container'>
+            <p >Already a member?</p>
+              <Link to="/login">
+                Let's log in
+              </Link>
+          </div>
         </div>
 
       </form>
