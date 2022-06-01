@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useAxios } from '../../services/axios.service';
+import './NewReviewForm.css';
 
 export default function NewReviewForm({userId, drinkId}) {
 
     const [review, setReview] = useState({
-        rating: 3,
+        rating: 1,
         comment: ''
     });
 
@@ -18,6 +19,7 @@ export default function NewReviewForm({userId, drinkId}) {
             .catch(err => console.error(err))
     }
 
+
     return (
         <form className='review-root' onSubmit={e => {
             e.preventDefault();
@@ -29,6 +31,7 @@ export default function NewReviewForm({userId, drinkId}) {
                     rating: Number(e.target.value)
                 })
             }}>
+
                 <option value="1">1 &#9733;</option>
                 <option value="2">2 &#9733;</option>
                 <option value="3">3 &#9733;</option>

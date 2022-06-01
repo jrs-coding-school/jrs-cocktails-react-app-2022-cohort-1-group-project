@@ -2,55 +2,13 @@
     background-color: rgba(241, 241, 241, 0.822);
     width: 300px;
     margin-top: 10px;
+    margin-left: 15px;
     padding: 5px;
     border-radius: 10px;
 }
 
-.review-root {
-    margin: 5em 0 0 15px;
-}
-
-
-.select-star-bar {
-    border: none;
-    border-right: 1px solid black;
-    place-items: center;
-    height: 3.3em;
-    background: white;
-    margin: 0;
-    font-size: 14px;
-    color: inherit;
-    border-radius: 4px 0 0 4px;
-    font-size: 14pt;
-    position: absolute;
-}
-
-.review-box {
-    border: none;
-    width: 35em;
-    height: 2.5em;
-    background: white;
-    margin: 0;
-    margin-left: 57px;
-    padding: 7px 8px;
-    font-size: 8px;
-    color: inherit;
-    font-size: 14pt;
-    position: relative;
-}
 
 .user-rating {
     font-size: 14pt;
-}
-
-.submit-review {
-    position: absolute;
-    width: 5em;
-    height: 62px;
-    margin-bottom: 7em;
-    background-color: white;
-    border: 0;
-    border-left: 1px solid black;
-    border-radius: 0 4px 4px 0;
 }
 

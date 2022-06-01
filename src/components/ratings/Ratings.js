@@ -41,7 +41,7 @@ export default function Ratings({ userId, drinkId }) {
           <p className='user-rating'>{showReview.comment}</p>
         </div>
       </div>
-      <h4>Leave a review:</h4>
+      <h4 className='leave-review'>Leave a review:</h4>
       <NewReviewForm userId={userId} drinkId={drinkId} />
     </div>
 
