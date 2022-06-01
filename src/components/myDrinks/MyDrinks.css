@@ -2,8 +2,10 @@
 .no-favs-container{
     margin-top: 10%;
     text-align: center;
-    background-color: #f1f1f1a0;
     padding: 1.5rem;
+
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
 }
 
 .no-favs-container #icon{
@@ -12,8 +14,10 @@
 
 .drinks-page-root h1{
     text-align: center;
-    background-color: #f1f1f1a0;
     padding: 3rem;
+
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
     
 }
 
@@ -25,4 +29,6 @@
     margin: auto;
     gap: 10px;  
     max-width: 50vw;  
+
+    
 }

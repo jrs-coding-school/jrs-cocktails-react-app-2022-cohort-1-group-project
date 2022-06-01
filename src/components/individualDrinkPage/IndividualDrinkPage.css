@@ -1,11 +1,13 @@
 .individual-drink-page-card {
-    background-color: rgba(241, 241, 241, 0.622);
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
+
     width: 40em;
     margin: auto;
     margin-top: 3em;
     padding: 15px 24px 5px 15px;
     border-radius: 15px;
-    opacity: .85;
+    
     position: relative;
 }
 

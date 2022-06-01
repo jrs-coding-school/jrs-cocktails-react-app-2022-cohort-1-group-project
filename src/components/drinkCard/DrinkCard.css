@@ -5,7 +5,9 @@
     position: relative;
     border-radius: 1rem;
     text-align: center;
-    background-color: rgba(241, 241, 241, 0.622);
+    
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
     z-index: 0;
     }
 

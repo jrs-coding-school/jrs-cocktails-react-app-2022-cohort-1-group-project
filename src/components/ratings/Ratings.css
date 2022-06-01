@@ -1,5 +1,7 @@
 .review-container {
-    background-color: rgba(241, 241, 241, 0.822);
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
+    
     width: 300px;
     margin-top: 10px;
     margin-left: 15px;
