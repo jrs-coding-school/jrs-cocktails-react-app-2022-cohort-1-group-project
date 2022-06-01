@@ -32,11 +32,11 @@ export default function NewReviewForm({userId, drinkId}) {
                 })
             }}>
 
-                <option value="1">1 &#9733;</option>
-                <option value="2">2 &#9733;</option>
-                <option value="3">3 &#9733;</option>
-                <option value="4">4 &#9733;</option>
-                <option value="5">5 &#9733;</option>
+                <option value="1">⭐️</option>
+                <option value="2">⭐️⭐️</option>
+                <option value="3">⭐️⭐️⭐️</option>
+                <option value="4">⭐️⭐️⭐️⭐️</option>
+                <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
 
             </select>
             <textarea className="review-box"

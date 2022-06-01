@@ -22,7 +22,7 @@
     height: 48px;
     background: rgba(241, 241, 241, 0.622);
     margin: 0;
-    margin-left: 57px;
+    margin-left: 115px;
     padding: 7px 8px;
     font-size: 8px;
     color: inherit;
@@ -40,4 +40,9 @@
     border-left: 1px solid black;
     border-radius: 0 4px 4px 0;
 }
+
+.select-star-bar > option {
+    text-align: center;
+}
+
 
