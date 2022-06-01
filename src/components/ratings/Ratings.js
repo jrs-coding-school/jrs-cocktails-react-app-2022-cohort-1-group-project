@@ -34,10 +34,6 @@ export default function Ratings ( { userId, drinkId } ) {
           // loggedInUserId={user.id}
         />
       ) )}
-
-        <div className='user-comment-container'>
-          {/* <p className='user-rating'>{showReview.comment}</p> */}
-        </div>
     </div>
 
   )
