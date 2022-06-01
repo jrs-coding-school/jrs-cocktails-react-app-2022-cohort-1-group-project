@@ -3,30 +3,30 @@ import { useParams } from 'react-router';
 import { useAxios } from '../../services/axios.service';
 import { useLocalStorage } from '../../services/localstorage.service';
 import Ratings from '../ratings/Ratings';
+import NewReviewForm from '../ratings/NewReviewForm';
 import './IndividualDrinkPage.css';
 
-export default function IndividualDrinkPage() {
+export default function IndividualDrinkPage () {
 
   const http = useAxios();
   const { drinkId } = useParams();
   const localStorageService = useLocalStorage();
   const user = localStorageService.getUser();
-  const [drink, setDrink] = useState({});
-  
+  const [ drink, setDrink ] = useState( {} );
 
 
-  function getDrinkById(id) {
-    http.getDrinkById(id)
-      .then((response) => {
-        console.log(response.data)
-        setDrink(response.data.drink[0]);
-      })
-      .catch(err => console.error(err))
+  function getDrinkById ( id ) {
+    http.getDrinkById( id )
+      .then( ( response ) => {
+        console.log( response.data )
+        setDrink( response.data.drink );
+      } )
+      .catch( err => console.error( err ) )
   }
 
-  useEffect(() => {
-    getDrinkById(drinkId);
-  }, [])
+  useEffect( () => {
+    getDrinkById( drinkId );
+  }, [] )
 
   return (
     <div className='individual-drink-page-root'>
@@ -56,7 +56,9 @@ export default function IndividualDrinkPage() {
         <p className='drink-instructions'>{drink.strInstructions}</p>
       </div>
       <Ratings drinkId={drinkId}
-      userId={user.id} />
+        userId={user.id} />
+      <NewReviewForm userId={user?.id} drinkId={drinkId} />
+
     </div>
   )
 }

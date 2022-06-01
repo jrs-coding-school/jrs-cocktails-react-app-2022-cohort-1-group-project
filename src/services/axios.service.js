@@ -48,8 +48,8 @@ function getDrinkById(id) {
     return axios.get(`${URL}/drinks/${id}`)
 }
 
-function getUserReviewByDrinkId(drinkId) {
-    return axios.get(`${URL}/drinks/review/${drinkId}`)
+function getReviewsByDrinkId(drinkId) {
+    return axios.get(`${URL}/reviews/${drinkId}`)
 }
 
 function getDrinksByName(drinkName) {
@@ -79,7 +79,7 @@ const api = {
     getDrinksBySpirit,
     getDrinksByTwoIngredients,
     getUserbyUsername,
-    getUserReviewByDrinkId
+   getReviewsByDrinkId
 
 }
 
