@@ -6,13 +6,13 @@ import Ratings from '../ratings/Ratings';
 import NewReviewForm from '../ratings/NewReviewForm';
 import './IndividualDrinkPage.css';
 
-export default function IndividualDrinkPage () {
+export default function IndividualDrinkPage() {
 
   const http = useAxios();
   const { drinkId } = useParams();
   const localStorageService = useLocalStorage();
   const user = localStorageService.getUser();
-  const [ drink, setDrink ] = useState( {} );
+  const [drink, setDrink] = useState({});
 
 
   function getDrinkById(id) {
@@ -24,9 +24,9 @@ export default function IndividualDrinkPage () {
       .catch(err => console.error(err))
   }
 
-  useEffect( () => {
-    getDrinkById( drinkId );
-  }, [] )
+  useEffect(() => {
+    getDrinkById(drinkId);
+  }, [])
 
   return (
     <div className='individual-drink-page-root'>
@@ -57,6 +57,8 @@ export default function IndividualDrinkPage () {
       </div>
       <Ratings drinkId={drinkId}
         userId={user.id} />
+      <h4 className='leave-review'>Leave a review:</h4>
+
       <NewReviewForm userId={user?.id} drinkId={drinkId} />
 
     </div>

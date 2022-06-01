@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAxios } from '../../services/axios.service';
+import NewReviewForm from './NewReviewForm';
 
 import './Ratings.css'
 import ReviewCard from './ReviewCard';
@@ -35,10 +36,8 @@ export default function Ratings ( { userId, drinkId } ) {
       ) )}
 
         <div className='user-comment-container'>
-          <p className='user-rating'>{showReview.comment}</p>
+          {/* <p className='user-rating'>{showReview.comment}</p> */}
         </div>
-      <h4 className='leave-review'>Leave a review:</h4>
-      <NewReviewForm userId={userId} drinkId={drinkId} />
     </div>
 
   )
