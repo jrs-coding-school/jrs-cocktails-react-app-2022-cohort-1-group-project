@@ -112,7 +112,7 @@ export default function IndividualDrinkPage() {
         <Ratings drinkId={drinkId}
           userId={user?.id} />
 
-        <h4 className='leave-review'>Leave a review:</h4>
+        {/* <h4 className='leave-review'>Leave a review:</h4> */}
         <NewReviewForm userId={user?.id} drinkId={drinkId} />
       </div>
     )

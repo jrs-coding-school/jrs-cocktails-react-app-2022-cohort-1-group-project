@@ -63,15 +63,17 @@
 .dev-container {
   display: flex;
   flex-direction: column;
+  margin-top: .7em;
+}
 
-  /* border: solid rgb(230, 0, 255) 10px; */
+.dev-container .name {
+margin-right: 5px;
 
 }
 
-.dev-container.name {
-margin: left;
+.footer-link {
+  color: #1d23d0;
 
-border: solid rgb(68, 0, 255) 2px;
 }
 
 .footer-heading  {
@@ -81,7 +83,7 @@ border: solid rgb(68, 0, 255) 2px;
 }
 
 .footer-1 {
-  margin-right: 6em;
+  margin-right: 2em;
   margin-left: 2em;
 
   /* border: solid rgb(0, 34, 255) 2px; */
@@ -103,7 +105,7 @@ border: solid rgb(68, 0, 255) 2px;
   margin: auto;
 }
 
-@media screen and (max-width: 620px) {
+@media screen and (max-width: 690px) {
   .footer-1 {
     display: none;
   }

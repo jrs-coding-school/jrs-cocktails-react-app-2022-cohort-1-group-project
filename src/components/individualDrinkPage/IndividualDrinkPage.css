@@ -25,12 +25,12 @@
 }
 
 .individual-drink-page-root .ind-drink-image {
-    width: 20em;
+    width: 18em;
     height: 18em;
     border-radius: 25px;
     opacity: 1;
     margin-top: 55px;
-    margin-left: 1em;
+    margin-left: 1.2em;
 }
 
 .ingredients-container{
@@ -63,4 +63,8 @@
     right: 20px;
     font-size: 24pt;
     color: red;
+}
+
+.leave-review {
+    margin-left: 1em;
 }

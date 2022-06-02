@@ -17,19 +17,19 @@ export default function Footer() {
           <h2 className='footer-title'> Feedback? <br/> Connect with the creators</h2>
           <div className='dev-container'>
             <div className='dev1'>
-              <span className='name'>Brian Ferry   </span>
-              <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} />   </a>
-              <a href="https://www.linkedin.com/in/brian-ferri-a3962023a/"><FontAwesomeIcon icon={faLinkedin} /></a>
+              <span className='name'>Brian Ferri</span>
+              <a className='footer-link' href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} />   </a>
+              <a className='footer-link' href="https://www.linkedin.com/in/brian-ferri-a3962023a/"><FontAwesomeIcon icon={faLinkedin} /></a>
             </div>
             <div className='dev2'>
               <span className='name'>Kelly Lozoya</span>
-              <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> </a>
-              <a href="https://www.linkedin.com/in/kellylozoya/"><FontAwesomeIcon icon={faLinkedin} /> </a>
+              <a className='footer-link' href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> </a>
+              <a className='footer-link' href="https://www.linkedin.com/in/kellylozoya/"><FontAwesomeIcon icon={faLinkedin} /> </a>
             </div>
             <div className='dev3'>
               <span className='name'>Kristina Trainer</span>
-              <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> </a>
-              <a href="https://www.linkedin.com/in/kristinatrainer/"><FontAwesomeIcon icon={faLinkedin} /> </a>
+              <a className='footer-link' href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> </a>
+              <a className='footer-link' href="https://www.linkedin.com/in/kristinatrainer/"><FontAwesomeIcon icon={faLinkedin} /> </a>
             </div>
           </div>
         </div>
