@@ -14,10 +14,16 @@
 
 .drinks-page-root h1{
     text-align: center;
-    padding: 1rem 0 2rem 0;
+    padding: 1.5rem 20rem;
+    margin: 2rem auto 1rem auto;
+    min-width: fit-content;
+    white-space: nowrap;
+    
+    width: fit-content;
 
     background-color: #dfe4e0a0;
     backdrop-filter: blur(10px);
+    border-radius: 5px;
     
 }
 
