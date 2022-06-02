@@ -13,24 +13,27 @@ export default function Footer() {
           <h2 className='footer-title'>Sip Sip Hooray</h2>
           <div className='glass-icon'><FontAwesomeIcon icon={faChampagneGlasses} size="4x" /></div>
         </div>
-
         <div className='footer-heading footer-2'>
-          <h2 className='footer-title'>Email Us</h2>
-          <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} />bferri4242@gmail.com</a>
-          <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} />kellysemail@gmail.com</a>
-          <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} />kristinasemail@gmail.com</a>
+          <h2 className='footer-title'> Feedback? <br/> Connect with the creators</h2>
+          <div className='dev-container'>
+            <div className='dev1'>
+              <span className='name'>Brian Ferry   </span>
+              <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} />   </a>
+              <a href="https://www.linkedin.com/in/brian-ferri-a3962023a/"><FontAwesomeIcon icon={faLinkedin} /></a>
+            </div>
+            <div className='dev2'>
+              <span className='name'>Kelly Lozoya</span>
+              <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> </a>
+              <a href="https://www.linkedin.com/in/kellylozoya/"><FontAwesomeIcon icon={faLinkedin} /> </a>
+            </div>
+            <div className='dev3'>
+              <span className='name'>Kristina Trainer</span>
+              <a href="mailto:bferri4242@gmail.com"><FontAwesomeIcon icon={faEnvelope} /> </a>
+              <a href="https://www.linkedin.com/in/kristinatrainer/"><FontAwesomeIcon icon={faLinkedin} /> </a>
+            </div>
+          </div>
         </div>
 
-        <div className='footer-heading footer-3'>
-          <h2 className='footer-title'>Find us on LinkedIn</h2>
-          <a href="https://www.linkedin.com/in/brian-ferri-a3962023a/"><FontAwesomeIcon icon={faLinkedin} />
-            Brian's LinkedIn</a>
-          <a href="https://www.linkedin.com/in/kellylozoya/"><FontAwesomeIcon icon={faLinkedin} />
-            Kelly's LinkedIn</a>
-          <a href="https://www.linkedin.com/in/kristinatrainer/"><FontAwesomeIcon icon={faLinkedin} />
-            Kristina's LinkedIn</a>
-        </div>
-        
       </div>
     </div>
   )

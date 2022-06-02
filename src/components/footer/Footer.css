@@ -6,48 +6,97 @@
 
 .footer-container {
   background: rgba(241, 241, 241, 0.622);
-  border-top: 1px solid #00353f; 
+  backdrop-filter: blur(20px);
+
   color: #00353f;
+  
+
 }
+
 
 .footer {
   width: 100%;
   height: 18vh;
+
   display: flex;
+  flex-direction: row;
+
   justify-content: center;
   margin: auto;
+
+  /* border: solid red 2px; */
 }
 
 .footer-heading {
   display: flex;
-  flex-direction: column;
-  max-width: 12em;
+  flex-direction: row;
+
+  /* max-width: 12em; */
+  /* border: solid red 2px; */
 }
+
+.footer-heading .footer-title {
+  text-align: right;
+}
+
+
+
 
 .footer-1 h2 {
   font-size: 22pt;
   margin-top: .5em;
+  margin: auto;
+
+  /* border: solid red 2px; */
 }
 
-.footer-2 h2,
-.footer-3 h2  {
+.footer-2 h2 {
   font-size: 14pt;
-  margin-top: 1em;
+  margin-top: 1em; 
   margin-bottom: .5em;
+
+  /* border: solid red 2px; */
+
+
 }
 
+.dev-container {
+  display: flex;
+  flex-direction: column;
 
-.footer-heading a {
+  /* border: solid rgb(230, 0, 255) 10px; */
+
+}
+
+.dev-container.name {
+margin: left;
+
+border: solid rgb(68, 0, 255) 2px;
+}
+
+.footer-heading  {
   text-decoration: none;
   margin-bottom: .5rem;
+
 }
 
 .footer-1 {
   margin-right: 6em;
+  margin-left: 2em;
+
+  /* border: solid rgb(0, 34, 255) 2px; */
 }
 
 .footer-2 {
+  margin: auto;
   margin-right: 1em;
+
+  display: flex;
+  flex: row;
+  gap: 2em;
+  
+
+  /* border: solid rgb(13, 0, 255) 2px; */
 }
 
 .glass-icon {
@@ -58,6 +107,5 @@
   .footer-1 {
     display: none;
   }
-  
 }
 
