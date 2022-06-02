@@ -35,11 +35,11 @@ body {
 }
 
 .logo b {
-  font: 400 19vh 'Pacifico', cursive;
+  font: 300 16vh 'Pacifico', cursive;
   ;
   color: #fee;
   text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
-  line-height: 8rem;
+  line-height: 6rem;
 }
 
 .hooray {
