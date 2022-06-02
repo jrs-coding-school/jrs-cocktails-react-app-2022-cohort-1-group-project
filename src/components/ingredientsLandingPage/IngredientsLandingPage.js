@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { useAxios } from '../../services/axios.service';
 import DrinkCard from '../drinkCard/DrinkCard'
+import TopTenDrinkPage from '../individualDrinkPage/TopTenDrinkPage';
 import Loading from '../loading/Loading'
 import './IngredientsLandingPage.css'
 
@@ -12,6 +13,7 @@ export default function IngredientsLandingPage () {
   const [ drinks, setDrinks ] = useState( [] );
   const [ favDrinks, setFavDrinks ] = useState( [] );
   const [ isLoading, setIsLoading ] = useState( true );
+
 
   const http = useAxios();
   const { ingredient, spirit } = useParams();
@@ -49,7 +51,7 @@ export default function IngredientsLandingPage () {
       .then( () => {
         setTimeout( () => {
           setIsLoading( false )
-        }, 1250 );
+        }, 1000 );
       } )
   }
 
@@ -69,9 +71,12 @@ export default function IngredientsLandingPage () {
   useEffect( () => {
     if ( spirit && !ingredient ) {
       getDrinksBySpirit( spirit );
-
     } else if ( spirit && ingredient ) {
       getDrinksByIngredients( spirit, ingredient );
+    } else if ( !spirit ) {
+      setTimeout( () => {
+        setIsLoading( false )
+      }, 1000 );
     }
   }, [] )
 
@@ -81,11 +86,18 @@ export default function IngredientsLandingPage () {
         <Loading />
       </div>
     )
+  } else if ( drinks.length == 0 && !spirit ) {
+    return (
+      <TopTenDrinkPage />
+    )
   } else if ( drinks.length == 0 ) {
     return (
-      <p>Too Creative! We don't have any drinks with those two ingredients.</p>
+
+      <h1>Too Creative! We don't have any drinks with those two ingredients.</h1>
+
     )
-  } else {
+  }
+  else {
     return (
       <div className="ingredients-page-root">
         <h1> Cocktails with <br />
