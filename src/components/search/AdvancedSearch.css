@@ -28,6 +28,7 @@
     border: none;
     border-right: 1px solid black;
     padding-top: 1em;
+    padding-left: 15px;
     place-items: center;
     height: 3.5em;
     width: 10em;

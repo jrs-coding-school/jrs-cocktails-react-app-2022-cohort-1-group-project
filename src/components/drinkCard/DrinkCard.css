@@ -13,7 +13,7 @@
     z-index: 0;
     }
 
-.icon-container{
+.drink-card-container .icon-container{
     position: absolute;
     bottom: -5px;
     right: -2px;

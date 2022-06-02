@@ -67,8 +67,8 @@ export default function IndividualDrinkPage() {
         <div className='individual-drink-page-card'>
           <img className='ind-drink-image' src={drink.strDrinkThumb} />
           <h1 className='ind-drink-name'>{drink.strDrink}</h1>
-
-          <DrinkHeart
+          <div className='ind-drink-heart'>
+          <DrinkHeart 
             isFav={isFav}
             drinkId={drinkId}
             userId={user?.id}
@@ -80,6 +80,7 @@ export default function IndividualDrinkPage() {
               setIsFav(false);
             }}
           />
+          </div>
 
           <div className='ingredients-container'>
             <h3>Ingredients:</h3>

@@ -16,6 +16,7 @@
     position: absolute;
     left: 12em;
     top: 1em;
+    width: 11em;
 }
 
 .ingredients-container h3 {
@@ -25,7 +26,7 @@
 
 .individual-drink-page-root .ind-drink-image {
     width: 20em;
-    height: 20em;
+    height: 18em;
     border-radius: 25px;
     opacity: 1;
     margin-top: 55px;
@@ -42,7 +43,7 @@
 .instructions-container {
     position: absolute;
     top: 9.8em;
-    left: 40em;
+    left: 38em;
     width: fit-content;
 }
 
@@ -56,3 +57,10 @@
     margin-bottom: 1em;
 }
 
+.ind-drink-heart {
+    position: absolute;
+    top: 1em;
+    right: 20px;
+    font-size: 24pt;
+    color: red;
+}
