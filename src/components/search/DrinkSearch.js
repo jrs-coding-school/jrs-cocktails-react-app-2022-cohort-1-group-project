@@ -40,9 +40,7 @@ export default function DrinkSearch() {
             />
             <button 
             className='mag-glass' 
-            type='submit'
-            
-            >
+            type='submit'>
             </button>
         </form>
 

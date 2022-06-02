@@ -64,7 +64,7 @@ export default function IndividualDrinkPage () {
           <p className='drink-instructions'>{drink.strInstructions}</p>
         </div>
         <Ratings drinkId={drinkId}
-          userId={user.id} />
+          userId={user?.id} />
         <h4 className='leave-review'>Leave a review:</h4>
 
         <NewReviewForm userId={user?.id} drinkId={drinkId} />

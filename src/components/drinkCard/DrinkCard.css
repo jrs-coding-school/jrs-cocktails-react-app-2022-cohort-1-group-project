@@ -1,20 +1,22 @@
 .drink-card-container{
-    width: fit-content;
+    width: 10em;
+    height: 14em;
     margin: auto;
+    margin-top: 2em;
     padding: 1rem;
     position: relative;
     border-radius: 1rem;
     text-align: center;
-    
+    max-width: 10em;
     background-color: #dfe4e0a0;
     backdrop-filter: blur(10px);
     z-index: 0;
     }
 
-.drink-card-root .icon-container{
+.icon-container{
     position: absolute;
-    bottom: .5rem;
-    right: 0.75em;
+    bottom: -5px;
+    right: -2px;
     color: #F74447;
     z-index: 100;
     padding: 1rem;

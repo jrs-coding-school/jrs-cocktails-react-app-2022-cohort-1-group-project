@@ -3,11 +3,9 @@
     display: flex;
     justify-content: space-around;
     text-align: center;
-
     margin: auto;
-    margin-top: 4em;
+    margin-top: 15em;
     width: fit-content;
-    
     border-radius: 5px;
     color: #555;
     align-items: center;
@@ -23,10 +21,10 @@
     background: white;
     margin: 0;
     padding: 7px 8px;
-    font-size: 14px;
     color: inherit;
     border-radius: 4px 0 0 4px;
-    font-size: 14pt;
+    font-size: 16pt;
+    padding-left: 1em;
 }
 
 .search-bar .cocktail-search[type="search"]::placeholder {
@@ -38,7 +36,7 @@
     text-indent: -999px;
     overflow: hidden;
     width: 40px;
-    height: 65.6px;
+    height: 5.6em;
     padding: 0;
     margin: 0;
     border: none;

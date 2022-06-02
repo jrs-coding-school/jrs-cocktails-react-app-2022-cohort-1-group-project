@@ -8,6 +8,8 @@ import { useState } from 'react';
 import { useAxios } from './services/axios.service';
 import { useNavigate } from 'react-router-dom';
 
+
+
 function App () {
 
   const [ visible, setVisible ] = useState( true );
@@ -24,7 +26,7 @@ function onHandleClicked(){
 
   return (
     <div className="App">
-      <div className="logo"><b>Sip, sip, <br /> hooray!</b></div>
+      <div className="logo"><b>Sip, sip, <div className='hooray'>hooray!</div></b></div>
 
       {visible ? <DrinkSearch /> : <AdvancedSearch />}
 
@@ -37,6 +39,7 @@ function onHandleClicked(){
 
       {/* <RandomCocktailGenerator /> */}
       <Footer />
+
     </div>
   );
 }
