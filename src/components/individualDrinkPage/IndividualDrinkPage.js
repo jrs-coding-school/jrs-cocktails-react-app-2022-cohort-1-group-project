@@ -48,7 +48,7 @@ export default function IndividualDrinkPage() {
 
   useEffect(() => {
     getDrinkById(drinkId);
-    getUserFavorites(user.id)
+    getUserFavorites(user?.id)
   }, [])
 
   useEffect(() => {
