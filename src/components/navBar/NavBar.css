@@ -1,18 +1,37 @@
 .nav-bar-root {
-    padding: 5px;  
 
     display: flex;
     justify-content: space-between;
 
     transition: 0.3s;
+    
+    /* background-color: hsla(0, 0%, 81%, 0.7);
+    backdrop-filter: blur(4px); */
+    
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
+    
+    padding: 0 2rem 0 2rem;
+
+    
+}
+
+.nav-bar-root, 
+.nav-bar-root button{
+    font-size: 14pt;
+    font-family: inherit;
+    color: rgb(255, 255, 255);
+    font-weight: bolder;    
 }
 
 .nav-bar-root button {
     
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.718);
-    cursor: pointer;
+    
+    padding: 1rem;
+    
+    cursor: pointer;   
 }
 
 .nav-bar-root button:hover {

@@ -3,6 +3,10 @@ import { Link, useParams, useNavigate } from "react-router-dom";
 import { useAxios } from '../../services/axios.service';
 import './NavBar.css';
 import { useLocalStorage } from '../../services/localstorage.service';
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGlassCheers } from '@fortawesome/free-solid-svg-icons'
+import { faArrowRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 
 export default function NavBar () {
@@ -18,7 +22,7 @@ export default function NavBar () {
     <button onClick={() => {
       navigate('/login')
     }}>
-        Log In
+        Log In 
     </button>
 )
 
@@ -28,7 +32,7 @@ function onLogoutClicked() {
 }
 const logoutButton = (
   <button onClick={onLogoutClicked}>
-        Log out
+      Log out <FontAwesomeIcon icon={faArrowRightFromBracket}/> 
     </button>
 )
 
@@ -51,7 +55,7 @@ const myDrinksButton = (
     <nav className="nav-bar-root">
       <div className='nav-bar-left'>
         <Link to={"/"}>
-          <button type='button'>Home</button>
+          <button type='button'><FontAwesomeIcon icon={faGlassCheers} />  Home </button>
         </Link>
         {user ? <span>|</span> : ''}
         {user ? myDrinksButton : ''}
