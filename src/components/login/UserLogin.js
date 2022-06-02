@@ -108,7 +108,7 @@ export default function LoginForm() {
           <br />
           <div className="cta-switch-container">
             <p>Not a member?</p>
-              <Link to="/signup">
+              <Link to="/signup" className='link'>
                 Sign up now
               </Link>
           </div>

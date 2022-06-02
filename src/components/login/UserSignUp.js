@@ -81,8 +81,11 @@ export default function UserSignUp() {
   useEffect(() => {
     clearTimeout(timeoutRef.current)
     timeoutRef.current = setTimeout(() => { checkIfUsernameIsTaken() }, 500)
-
   }, [formData.username])
+  
+  useEffect(() => {
+    usernameRef.current.focus()
+  }, [])
 
 
   return (
@@ -129,10 +132,10 @@ export default function UserSignUp() {
           </button>
           <br />
           <br />
-          <div className='cta-switch-container'>
+          <div className='cta-switch-container' >
             <p >Already a member?</p>
-              <Link to="/login">
-                Let's log in
+              <Link to="/login" className='link'>
+                Get logged in
               </Link>
           </div>
         </div>
