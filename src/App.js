@@ -30,8 +30,26 @@ function onHandleClicked(){
 
       {visible ? <DrinkSearch /> : <AdvancedSearch />}
 
-      {visible ? <button className="toggle-two" onClick={() => setVisible( !visible )}>Click here to Search by Ingredients</button>
-        : <button className="toggle-one" onClick={() => setVisible( !visible )}>Click here to Search by Cocktail</button>}
+      {visible ? <button className="toggle two" onClick={() => setVisible( !visible )}>Click here to Search by Ingredients</button>
+        : <button className="toggle one" onClick={() => setVisible( !visible )}>Click here to Search by Cocktail</button>}
+      <br/>
+      <div className='or-container'>
+        <hr  style={{
+          background: 'white',
+          color: 'white',
+          borderColor: 'white',
+          height: '3px',
+          width: '7rem'
+        }}/> or find a new fav! <span/> 
+        <hr  style={{
+          background: 'white',
+          color: 'white',
+          borderColor: 'white',
+          height: '3px',
+          width: '7rem'
+        }}/>
+        <br/> and
+        </div>
       <button 
       className='random-drink-button'
       onClick={onHandleClicked}

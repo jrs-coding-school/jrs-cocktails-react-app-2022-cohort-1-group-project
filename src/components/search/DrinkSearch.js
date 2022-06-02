@@ -16,8 +16,7 @@ export default function DrinkSearch() {
         .then(response =>{
             var cocktailId = response.data.drink[0].idDrink
             setCocktail(cocktailId)
-        })
-        
+        })        
     }
     
     return (
@@ -30,7 +29,6 @@ export default function DrinkSearch() {
             navigate(`/cocktail/${cocktail}`);
         }}
         >
-
             <input 
             className='cocktail-search'
             type="search"
