@@ -68,7 +68,7 @@ export default function IndividualDrinkPage() {
           <img className='ind-drink-image' src={drink.strDrinkThumb} />
           <h1 className='ind-drink-name'>{drink.strDrink}</h1>
           <div className='ind-drink-heart'>
-          <DrinkHeart 
+         { user ? <DrinkHeart 
             isFav={isFav}
             drinkId={drinkId}
             userId={user?.id}
@@ -79,7 +79,7 @@ export default function IndividualDrinkPage() {
             onUnhearted={() => {
               setIsFav(false);
             }}
-          />
+          /> : ''}
           </div>
 
           <div className='ingredients-container'>
