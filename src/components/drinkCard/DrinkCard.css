@@ -10,15 +10,25 @@
     max-width: 10em;
     background-color: #dfe4e0a0;
     backdrop-filter: blur(10px);
-    z-index: 0;
+
     }
+
+.link-card {
+    text-decoration: none;
+
+}
+
+.drink-card-name {
+    color: #3a3a3a;
+}
+
+
 
 .drink-card-container .icon-container{
     position: absolute;
     bottom: -5px;
     right: -2px;
     color: #F74447;
-    z-index: 100;
     padding: 1rem;
 }
 

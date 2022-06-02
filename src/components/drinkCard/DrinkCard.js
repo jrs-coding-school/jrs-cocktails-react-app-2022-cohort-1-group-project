@@ -12,12 +12,12 @@ export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav, set
 
   return (
     <div className='drink-card-container'>
-      <Link to={`/cocktail/${idDrink}`}>
+      <Link className='link-card' to={`/cocktail/${idDrink}`}>
         <div className='drink-card-root'>
           <div className="image-container">
             <img src={strDrinkThumb} />
           </div>
-          <h3>
+          <h3 className='drink-card-name'>
             {strDrink}
           </h3>
         </div>
