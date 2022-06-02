@@ -1,7 +1,9 @@
 .ingredients-page-root h1{
     text-align: center;
     padding: 3rem;
-
+    position: fixed;
+    width: 100%;
+    top: 1em;
     background-color: #dfe4e0a0;
     backdrop-filter: blur(10px);
     
@@ -17,6 +19,7 @@
     justify-content: center;
     align-items: center;
     margin: auto;
+    margin-top: 11.5em;
     gap: 10px;  
     max-width: 65vw;  
 }
