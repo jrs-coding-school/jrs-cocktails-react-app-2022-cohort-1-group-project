@@ -2,25 +2,25 @@
     display: flex;
     text-align: center;
     margin: auto;
-    margin-top: 4em;
+    margin-top: 15em;
     width: fit-content;
     border-radius: 5px;
     color: #555;
     justify-content: space-around;
     align-items: center;
-    max-width: 75vw;
+    max-width: 100%;
 }
 
 .ingredient-form .ingredient-search {
     border: none;
-    width: 35em;
+    width: 30em;
     height: 3.5em;
     background: white;
     margin: 0;
-    padding: 7px 8px;
+    padding: 7px 8px 7px 12px;
     font-size: 14px;
     color: inherit;
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 .ingredient-form .select-bar {
@@ -30,12 +30,13 @@
     padding-top: 1em;
     place-items: center;
     height: 3.5em;
+    width: 10em;
     background: white;
     margin: 0;
     font-size: 14px;
     color: inherit;
     border-radius: 4px 0 0 4px;
-    font-size: 14pt;
+    font-size: 16pt;
 }
 
 .ingredient-form select {
@@ -46,7 +47,7 @@
     text-indent: -999px;
     overflow: hidden;
     width: 40px;
-    height: 65.6px;
+    height: 5.6em;
     padding: 0;
     margin: 0;
     border: none;

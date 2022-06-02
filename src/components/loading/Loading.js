@@ -31,7 +31,7 @@ export default function Loading () {
             >
                 <div className='shaker-container'>
 
-                    <img src={shaker3} width="450rem" className='shaker' />
+                    <img src={shaker3} width="300rem" className='shaker' />
                 </div>
             </Shake>
 
