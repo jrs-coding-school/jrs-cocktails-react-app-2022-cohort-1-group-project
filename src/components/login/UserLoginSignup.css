@@ -9,6 +9,7 @@
     backdrop-filter: blur(10px);
     
     width: 30rem;
+    height: 34rem;
     margin: auto;
     align-items: center;
     text-align: center;
@@ -19,25 +20,41 @@
     border-radius: 15px;
 }
 
+.user-pages h2 {
+    margin: .5rem;
+}
+
+.user-pages h1 {
+    margin-bottom: 1.25rem;
+}
+
 .user-pages .sign-up-form {
     background-color: hsla(28, 8%, 88%, 0.73);
     backdrop-filter: blur(10px);
 }
     
 
-.user-pages .input-container, .user-pages button {
+.user-pages .input-container,
+.user-pages button {
     margin: auto;
     width: 20rem;
 
     font-size: 18pt;
-    
+    cursor: pointer; 
+    transition: all .3s ease-in-out;
 }
 
-/* .input-container {
-    margin: auto;
-    align-items: center;
-    place-items: center;
-} */
+.user-pages .login-form button:hover{
+    backdrop-filter: blur(10px);
+    /* background-color: hsla(28, 8%, 88%, 0.73); */
+    background-color: hsla(132, 8%, 88%, 0.631);  
+}
+
+.user-pages .sign-up-form button:hover{
+    backdrop-filter: blur(10px);
+    background-color: hsla(28, 8%, 88%, 0.73);
+    /* background-color: hsla(132, 8%, 88%, 0.631); */ 
+}
 
 .user-pages input, .user-pages button{
     border: none;
@@ -58,8 +75,11 @@
     padding: 1rem;
 }
 
+
 .user-pages .sign-up-form button {
     background-color: hsl(28, 51%, 50%);
+    cursor: pointer;
+    transition: all .3s ease-in-out;  
 }
 
 .user-pages  .password-input {
@@ -82,4 +102,10 @@
     padding-bottom: .5;
 }
 
+.user-pages .link{
+    text-decoration: underline;
+    color: inherit;
+    font-weight: bolder;
+    
+}
 
