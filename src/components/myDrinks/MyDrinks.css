@@ -14,7 +14,7 @@
 
 .drinks-page-root h1{
     text-align: center;
-    padding: 3rem;
+    padding: 1rem 0 2rem 0;
 
     background-color: #dfe4e0a0;
     backdrop-filter: blur(10px);
