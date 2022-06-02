@@ -28,7 +28,7 @@ export default function DrinkCard({ idDrink, strDrink, strDrinkThumb, isFav, set
         <DrinkHeart
           isFav={isFav}
           drinkId={idDrink}
-          userId={user.id}
+          userId={user?.id}
           onHearted={setIsFav}
           onUnhearted={setIsNotFav}
         />

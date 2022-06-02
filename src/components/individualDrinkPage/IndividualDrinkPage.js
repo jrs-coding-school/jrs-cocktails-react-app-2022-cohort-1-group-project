@@ -71,7 +71,7 @@ export default function IndividualDrinkPage() {
           <DrinkHeart
             isFav={isFav}
             drinkId={drinkId}
-            userId={user.id}
+            userId={user?.id}
 
             onHearted={() => {
               setIsFav(true)
