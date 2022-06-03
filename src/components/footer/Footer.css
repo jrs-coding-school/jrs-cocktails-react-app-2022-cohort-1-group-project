@@ -16,7 +16,7 @@
 
 .footer {
   width: 100%;
-  height: 18vh;
+  height: 10vh;
 
   display: flex;
   flex-direction: row;
@@ -43,7 +43,7 @@
 
 
 .footer-1 h2 {
-  font-size: 22pt;
+  font-size: 16pt;
   margin-top: .5em;
   margin: auto;
 
@@ -64,15 +64,15 @@
   display: flex;
   flex-direction: column;
   margin-top: .7em;
+ 
 }
 
 .dev-container .name {
 margin-right: 5px;
-
 }
 
 .footer-link {
-  color: #1d23d0;
+  color: inherit;
 
 }
 

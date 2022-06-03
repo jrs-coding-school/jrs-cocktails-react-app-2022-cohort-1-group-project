@@ -11,7 +11,7 @@ export default function Footer() {
       <div className='footer'>
         <div className='footer-heading footer-1'>
           <h2 className='footer-title'>Sip Sip Hooray</h2>
-          <div className='glass-icon'><FontAwesomeIcon icon={faChampagneGlasses} size="4x" /></div>
+          <div className='glass-icon'><FontAwesomeIcon icon={faChampagneGlasses} size="2x" /></div>
         </div>
         <div className='footer-heading footer-2'>
           <h2 className='footer-title'> Feedback? <br/> Connect with the creators</h2>
