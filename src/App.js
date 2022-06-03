@@ -28,7 +28,7 @@ function onHandleClicked(){
     <div className="app-container">
       <div className="logo"><b>Sip, sip, <div className='hooray'>hooray!</div></b></div>
 
-      {visible ? <DrinkSearch /> : <AdvancedSearch />}
+      {!visible ? <DrinkSearch /> : <AdvancedSearch />}
 
       {visible ? <button className="toggle two" onClick={() => setVisible( !visible )}>Click here to Search by Ingredients</button>
         : <button className="toggle one" onClick={() => setVisible( !visible )}>Click here to Search by Cocktail</button>}

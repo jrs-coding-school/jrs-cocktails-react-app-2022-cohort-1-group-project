@@ -1,5 +1,9 @@
 .ingredient-form {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* gap: 1px; */
+  
   text-align: center;
   margin: auto;
   margin-top: 13vh;
@@ -9,92 +13,94 @@
   justify-content: space-around;
   align-items: center;
   max-width: 100%;
+  font-size: 16pt;
 }
 
 .ingredient-form .ingredient-search {
   border: none;
-  width: 13em;
-  height: 3.5em;
   background: white;
-  margin: 0;
-  padding: 7px 8px 7px 12px;
-  font-size: 14px;
+  margin: auto;
   color: inherit;
-  font-size: 16pt;
+  padding: 1.5rem 1rem;
+  font: inherit;
 }
 
-.ingredient-form .select-bar {
-  flex-direction: column;
+.ingredient-form .btn-group {
   border: none;
-  border-right: 1px solid black;
-  padding-top: 1em;
-  padding-left: 15px;
   place-items: center;
-  height: 3.5em;
-  width: 25em;
   background: white;
   margin: 0;
-  font-size: 14px;
+  
   color: inherit;
   border-radius: 4px 0 0 4px;
-  font-size: 16pt;
   white-space: nowrap;
+  
+  display: flex;
+  flex-direction: row;
 }
 
-.ingredient-form .select-bar .btn-group .btn-primary {
+.ingredient-form .btn-group .spirit {
   border: none;
   background: none;
-  padding-right: 1em;
-  padding-top: 0.25rem;
+  padding: 1.5rem 1rem;
   cursor: pointer;
-  font-family: inherit;
+  font: inherit;
   font-weight: 900;
-  font-size: 16pt;
+  text-transform: capitalize;
+  
 }
-.ingredient-form .select-bar .btn-group .btn-primary:hover {
+.ingredient-form .btn-group .spirit:hover {
   color: #f68687;
 }
 
-.ingredient-form .select-bar .btn-group .btn-primary:active {
+.ingredient-form .btn-group .spirit:active {
   color: black;
 }
 
-.ingredient-form .select-bar .btn-group .btn-primary.selected {
-    color: #f68687;
+.ingredient-form .btn-group .spirit.selected {
+    color: white;
+    background-color: #f68687;
 }
 
 .ingredient-form select {
   text-transform: capitalize;
 }
 
-.ingredient-form .mag-glass[type="submit"] {
-  text-indent: -999px;
-  overflow: hidden;
-  width: 40px;
-  height: 5.6em;
-  padding: 0;
-  margin: 0;
+.ingredient-form .mag-glass {
   border: none;
-  border-radius: 0 4px 4px 0;
-  background: white
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
-    no-repeat center;
   cursor: pointer;
+  color: inherit;
+  background: none;
 }
 
-.ingredient-form .ingredient-search[type="search"]::placeholder {
+.ingredient-form .ingredient-search::placeholder {
   color: #bbb;
   font-size: 14pt;
 }
 
-.ingredient-form .mag-glass[type="submit"]:hover {
+.ingredient-form .mag-glass:hover {
   opacity: 1;
 }
 
-.ingredient-form .ingredient-search[type="search"]:focus {
+.ingredient-form .ingredient-search:focus {
   outline: none;
 }
 
-.ingredient-form .mag-glass[type="submit"]:focus {
+.ingredient-form .ing-search-bar {
+  position: relative;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  padding-right: 2rem;
+}
+
+.ingredient-form .mag-glass {
+  position: absolute;
+  top: 1.25rem;
+  right: 0.5rem;
+}
+
+.ingredient-form .mag-glass:focus {
   outline: none;
 }

@@ -1,3 +1,5 @@
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './AdvancedSearch.css'
@@ -16,13 +18,11 @@ export default function AdvancedSearch () {
         'cognac'
     ]
     const navigate = useNavigate();
-    const [ spirit, setSpirit ] = useState( [] );
+    const [ spirit, setSpirit ] = useState( 'whiskey' );
     const [ ingredient, setIngredient ] = useState( '' );
-    const [isSelectedSpirit, setIsSelectedSpirit] = useState(false);
 
-    function spiritSelected(e){
-        setSpirit( e.target.value )
-        setIsSelectedSpirit(!isSelectedSpirit)
+    function spiritSelected ( newSpirit ) {
+        setSpirit( newSpirit )
     }
 
     return (
@@ -34,33 +34,26 @@ export default function AdvancedSearch () {
                 if ( ingredient ) {
                     navigate( `/cocktails/${spirit}/${ingredient}` )
                 } else {
-                    setSpirit(e.target.value)
+                    setSpirit( e.target.value )
                     navigate( `/cocktails/${spirit}` )
                 }
 
             }}>
 
 
-         
-            <div
-                className='select-bar'
-            // value={spirit}
-            //     onChange={e => {
-            //         setSpirit( e.target.value )
-            //     }}
-            >
-                <div className='btn-group'>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='whiskey'>Whiskey</button>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='rum'>Rum</button>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='gin'>Gin</button>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='vodka'>Vodka</button>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='tequila'>Tequila</button>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='cognac'>Cognac</button>
-                    <button type="button" className={isSelectedSpirit ? `btn btn-primary selected` : `btn btn-primary`} onClick={spiritSelected} value='wine'>Wine</button>
-                </div>
 
+            <div className='btn-group'>
+                {SPIRITS.map( ( _spirit ) => (
+                    <div className={`spirit ${spirit == _spirit && `selected`}`}
+                        onClick={() => spiritSelected( _spirit )}
+                    >
+                        {_spirit}
+                    </div>
+                ) )}
             </div>
 
+<div className='ing-search-bar'>
+    
             <input
                 className='ingredient-search'
                 type="search"
@@ -69,29 +62,17 @@ export default function AdvancedSearch () {
                 placeholder=" add a tasty mixer!"
                 // value={form.username}
                 onChange={e => setIngredient( e.target.value )}
-            />
+                />
 
-            <button className='mag-glass' type="submit"></button>
+                <button className='mag-glass' type="submit">
+                    <FontAwesomeIcon icon={faMagnifyingGlass} size="2x"/>
+                </button>
+                </div>
+            
+
 
         </form>
 
     )
 }
 
-
-   {/* <select
-                className='select-bar'
-                value={spirit}
-                onChange={e => {
-                    setSpirit( e.target.value )
-                }}
-            >
-                <option disabled value="">Select A Spirit</option>
-                {SPIRITS.map( spirit => (
-                    <option value={spirit}>{spirit}</option>
-                ) )}
-
-            </select> */}
-
-            
-            // SPIRITS[ Math.floor( Math.random() * SPIRITS.length ) ]

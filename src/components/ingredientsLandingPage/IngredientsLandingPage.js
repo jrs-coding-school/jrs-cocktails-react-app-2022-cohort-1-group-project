@@ -4,6 +4,7 @@ import { useAxios } from '../../services/axios.service';
 import DrinkCard from '../drinkCard/DrinkCard'
 import TopTenDrinkPage from '../individualDrinkPage/TopTenDrinkPage';
 import Loading from '../loading/Loading'
+import AdvancedSearch from '../search/AdvancedSearch';
 import './IngredientsLandingPage.css'
 
 export default function IngredientsLandingPage () {
@@ -66,9 +67,9 @@ export default function IngredientsLandingPage () {
   function isDrinkInFavorteList ( id ) {
     return favDrinks.includes( id );
   }
-
-
-  useEffect( () => {
+  
+  function getDrinks(){
+    
     if ( spirit && !ingredient ) {
       getDrinksBySpirit( spirit );
     } else if ( spirit && ingredient ) {
@@ -78,7 +79,16 @@ export default function IngredientsLandingPage () {
         setIsLoading( false )
       }, 1000 );
     }
+  }
+
+
+  useEffect( () => {
+    getDrinks()
   }, [] )
+  
+  useEffect(() =>{
+    getDrinks()
+  }, [spirit, ingredient])
 
   if ( isLoading ) {
     return (
@@ -100,6 +110,7 @@ export default function IngredientsLandingPage () {
   else {
     return (
       <div className="ingredients-page-root">
+        {/* <AdvancedSearch style={{marginTop: '0'}} /> */}
         <h1> Cocktails with <br />
           <span className='header'>
             {spirit && ingredient ? `${spirit} & ${ingredient}` : spirit}
