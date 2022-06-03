@@ -93,7 +93,7 @@ export default function IndividualDrinkPage() {
             /> : ''}
           </div>
           <div className='ingredients-container'>
-            <h3>Ingredients:</h3>
+            <h3>Ingredients</h3>
             <p className='ind-ingredients'>{drink.strIngredient1}</p>
             <p className='ind-ingredients'>{drink.strIngredient2}</p>
             <p className='ind-ingredients'>{drink.strIngredient3}</p>
@@ -116,7 +116,7 @@ export default function IndividualDrinkPage() {
             <p className='ind-instructions'>{drink.strMeasure9}</p>
           </div>
           <div className='drink-instructions'>
-            <h3>Instructions:</h3>
+            <h3>Instructions</h3>
             <p>{drink.strInstructions}</p>
           </div>
         </div>

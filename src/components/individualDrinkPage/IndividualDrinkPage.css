@@ -12,16 +12,20 @@
 
 .ind-drink-name {
     position: absolute;
-    left: 12.5em; 
-    top: 1em;
-    width: fit-content;
+    left: 16.5em; 
+    top: 2.5em;
+    width: 30em;
     color: #3a3a3a;
-    font-size: 2em;
-    font: 300 2em 'Pacifico', cursive; 
+    font: 300 1.5em 'Pacifico', cursive; 
 }
-.ingredients-container h3, .instructions-container h3 {
+
+
+.ingredients-container h3, .drink-instructions h3 {
     /* position: absolute; */
-    margin-bottom: 1em;
+    margin-bottom: .75em;
+    color: rgb(66, 68, 68);
+  
+
 }
 .individual-drink-page-root .ind-drink-image {
     width: 20em;
@@ -36,6 +40,7 @@
     left: 25em;
     position: absolute;
     font-size: 12pt;
+    height: fit-content;
 }
 .instructions-container {
     position: absolute;
@@ -46,10 +51,11 @@
 .drink-instructions {
     margin-top: 1em;
     padding: 20px;
+    padding-top: 1em;
 }
 .ind-ingredients,
 .ind-instructions {
-    margin-bottom: 1em;
+    margin-bottom: .5em;
 }
 .ind-drink-heart {
     position: absolute;
@@ -65,8 +71,7 @@
     background-color: #fee;
   
     color: #3a3a3a;
-    font-size: 1em;
-    font: 300 1em 'Pacifico', cursive;
+    font: 300 1.5em 'Pacifico', cursive;
   
     
     padding: 1rem 8rem;
