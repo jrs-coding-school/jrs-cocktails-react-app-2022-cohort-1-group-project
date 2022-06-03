@@ -1,76 +1,100 @@
 .ingredient-form {
-    display: flex;
-    text-align: center;
-    margin: auto;
-    margin-top: 15vh;
-    width: fit-content;
-    border-radius: 5px;
-    color: #555;
-    justify-content: space-around;
-    align-items: center;
-    max-width: 100%;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  margin-top: 12vh;
+  width: fit-content;
+  border-radius: 5px;
+  color: #555;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
 }
 
 .ingredient-form .ingredient-search {
-    border: none;
-    width: 30em;
-    height: 3.5em;
-    background: white;
-    margin: 0;
-    padding: 7px 8px 7px 12px;
-    font-size: 14px;
-    color: inherit;
-    font-size: 16pt;
+  border: none;
+  width: 13em;
+  height: 3.5em;
+  background: white;
+  margin: 0;
+  padding: 7px 8px 7px 12px;
+  font-size: 14px;
+  color: inherit;
+  font-size: 16pt;
 }
 
 .ingredient-form .select-bar {
-    flex-direction: column;
-    border: none;
-    border-right: 1px solid black;
-    padding-top: 1em;
-    padding-left: 15px;
-    place-items: center;
-    height: 3.5em;
-    width: 10em;
-    background: white;
-    margin: 0;
-    font-size: 14px;
-    color: inherit;
-    border-radius: 4px 0 0 4px;
-    font-size: 16pt;
+  flex-direction: column;
+  border: none;
+  border-right: 1px solid black;
+  padding-top: 1em;
+  padding-left: 15px;
+  place-items: center;
+  height: 3.5em;
+  width: 25em;
+  background: white;
+  margin: 0;
+  font-size: 14px;
+  color: inherit;
+  border-radius: 4px 0 0 4px;
+  font-size: 16pt;
+  white-space: nowrap;
+}
+
+.ingredient-form .select-bar .btn-group .btn-primary {
+  border: none;
+  background: none;
+  padding-right: 1em;
+  padding-top: 0.25rem;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: 16pt;
+}
+.ingredient-form .select-bar .btn-group .btn-primary:hover {
+  color: #f68687;
+}
+
+.ingredient-form .select-bar .btn-group .btn-primary:active {
+  color: black;
+}
+
+.ingredient-form .select-bar .btn-group .btn-primary.selected {
+    color: #f68687;
 }
 
 .ingredient-form select {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .ingredient-form .mag-glass[type="submit"] {
-    text-indent: -999px;
-    overflow: hidden;
-    width: 40px;
-    height: 5.6em;
-    padding: 0;
-    margin: 0;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
-    cursor: pointer;
+  text-indent: -999px;
+  overflow: hidden;
+  width: 40px;
+  height: 5.6em;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background: white
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E")
+    no-repeat center;
+  cursor: pointer;
 }
 
 .ingredient-form .ingredient-search[type="search"]::placeholder {
-    color: #bbb;
-    font-size: 14pt;
+  color: #bbb;
+  font-size: 14pt;
 }
 
 .ingredient-form .mag-glass[type="submit"]:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .ingredient-form .ingredient-search[type="search"]:focus {
-    outline: none;
+  outline: none;
 }
 
 .ingredient-form .mag-glass[type="submit"]:focus {
-    outline: none;
-    
+  outline: none;
 }

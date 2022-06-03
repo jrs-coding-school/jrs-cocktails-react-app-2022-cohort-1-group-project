@@ -4,7 +4,7 @@
     justify-content: space-around;
     text-align: center;
     margin: auto;
-    margin-top: 15vh;
+    margin-top: 12vh;
     width: fit-content;
     border-radius: 5px;
     color: #555;
@@ -16,7 +16,7 @@
 
 .search-bar .cocktail-search[type="search"] {
     border: none;
-    width: 40em;
+    width: 38em;
     height: 3.5em;
     background: white;
     margin: 0;
