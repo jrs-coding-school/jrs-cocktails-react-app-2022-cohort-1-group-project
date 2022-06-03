@@ -19,10 +19,10 @@ export default function IndividualDrinkPage() {
   const [favDrinks, setFavDrinks] = useState([]);
   const [isFav, setIsFav] = useState(false);
 
-  const [render, setRender] = useState(0);
-  useEffect(() => {
-    onHandleClicked()
-  }, [render])
+  // const [render, setRender] = useState(0);
+  // useEffect(() => {
+  //   onHandleClicked()
+  // }, [render])
 
 
   function onHandleClicked() {
@@ -30,9 +30,7 @@ export default function IndividualDrinkPage() {
       .then((results) => {
         var idDrink = results.data.drink[0].idDrink
         navigate(`/cocktail/${idDrink}`)
-        console.log('navigated to a new drink id but did NOT render')
       })
-    console.log('end of onhandclicked')
   }
   function getDrinkById(id) {
     http.getDrinkById(id)
@@ -63,6 +61,10 @@ export default function IndividualDrinkPage() {
     getUserFavorites(user?.id)
   }, [])
 
+  useEffect(() => {
+    // refresh somehow ???
+    getDrinkById(drinkId)
+  }, [drinkId])
 
   useEffect(() => {
     // if array is not empty, then check drinkId (params) is in fav array
@@ -93,7 +95,7 @@ export default function IndividualDrinkPage() {
             /> : ''}
           </div>
           <div className='ingredients-container'>
-            <h3>Ingredients</h3>
+            <h3>Ingredients:</h3>
             <p className='ind-ingredients'>{drink.strIngredient1}</p>
             <p className='ind-ingredients'>{drink.strIngredient2}</p>
             <p className='ind-ingredients'>{drink.strIngredient3}</p>
@@ -116,22 +118,23 @@ export default function IndividualDrinkPage() {
             <p className='ind-instructions'>{drink.strMeasure9}</p>
           </div>
           <div className='drink-instructions'>
-            <h3>Instructions</h3>
+            <h3>Instructions:</h3>
             <p>{drink.strInstructions}</p>
           </div>
         </div>
-        <form onSubmit={onHandleClicked}>
-          <button
-            className='random-drink-button'
-            onClick={setDrink}
 
-          >Shake it up!</button>
-        </form>
+        <button
+          className='random-drink-button'
+          onClick={onHandleClicked}
+        >
+          Shake it up!
+        </button>
+
 
 
         <Ratings drinkId={drinkId}
           userId={user?.id} />
-        <h4 className='leave-review'>Leave a review:</h4>
+        {/* <h4 className='leave-review'>Leave a review:</h4> */}
         <NewReviewForm userId={user?.id} drinkId={drinkId} />
       </div>
     )
