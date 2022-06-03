@@ -24,6 +24,9 @@ export default function NewReviewForm({userId, drinkId}) {
         <form className='review-root' onSubmit={e => {
             e.preventDefault();
             addNewReview();
+            setReview({rating: 1,
+                        comment: ''
+            })
           }}>
             <select className='select-star-bar' onChange={e => {
                 setReview({
