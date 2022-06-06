@@ -1,0 +1,17 @@
+.review-container {
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
+    
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 15px;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.user-rating {
+    font-size: 14pt;
+    margin-left: 1em;
+}
+

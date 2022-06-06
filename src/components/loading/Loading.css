@@ -1,0 +1,20 @@
+.shaker-container {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    padding-top: 5%;
+}
+
+.shaker-container .shaker {
+    border-radius: 50%;
+     background-color: rgba(255, 192, 203, 0);
+}
+
+.loading-banner-root {
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
+    
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}

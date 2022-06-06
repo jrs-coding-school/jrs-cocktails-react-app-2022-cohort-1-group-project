@@ -1,38 +1,90 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+html,
+body {
+  height: 100%
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-image: url('https://images.unsplash.com/photo-1623593688280-a5aec8ac4ae7?ixlib=rb-1.2.1&raw_url=true&q=80&fm=jpg&crop=entropy&cs=tinysrgb&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987');
+
+  margin: 0;
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.app-container .toggle {
+  font-size: 20pt;
+  font-family: inherit;
+  font-weight: bolder;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: .5rem;
+  width: fit-content;
+  background: none;
+  border: none;
   color: white;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+
+.app-container .logo {
+  text-align: center;
+  width: 65%;
+  height: 250px;
+  margin: auto;
+  margin-top: 5.5rem;
+  user-select: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-container .logo b {
+  font: 300 16vh 'Pacifico', cursive;
+  
+  min-width: fit-content;
+  white-space: nowrap;
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff4444, 0 0 0.5em #ff4444, 0 0 0.1em #ff4444, 0 10px 3px #000;
+  line-height: 6rem;
+}
+
+.app-container .hooray {
+  margin-top: .4em;
+}
+
+
+.app-container .random-drink-button {
+  border: none;
+  border-radius: .5rem;
+  
+  background-color: #fee;
+
+  color: #3a3a3a;
+  font-size: 1.5rem;
+  font: 300 3vh 'Pacifico', cursive;
+
+  
+  padding: 1rem 8rem;
+  margin: 1rem auto 20rem auto;
+  width: fit-content;
+  display: block;
+  
+  cursor: pointer;
+}
+
+.app-container .or-container{
+  margin: auto;
+  width: fit-content;
+  
+  font: inherit;
+  font-size: 16pt;
+  color: #fee;
+  font-weight: 900;
+  
+  text-align: center;
+  align-items: center;
+}
+
+.app-container .or-container hr{
+  display: inline-block;
+  border: solid red 2px;
+  margin: .25rem 0 .25rem 0;
 }

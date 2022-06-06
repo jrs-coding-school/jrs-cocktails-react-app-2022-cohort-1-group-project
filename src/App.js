@@ -1,23 +1,62 @@
-import logo from './logo.svg';
 import './App.css';
+import DrinkSearch from './components/search/DrinkSearch';
+import AdvancedSearch from './components/search/AdvancedSearch';
+import RandomCocktailGenerator from './components/randomCocktailGenerator/RandomCocktailGenerator';
+import Footer from './components/footer/Footer';
+import NavBar from './components/navBar/NavBar';
+import { useState } from 'react';
+import { useAxios } from './services/axios.service';
+import { useNavigate } from 'react-router-dom';
 
-function App() {
+
+
+function App () {
+
+  const [ visible, setVisible ] = useState( true );
+  const http = useAxios();
+  const navigate = useNavigate();
+
+function onHandleClicked(){
+  http.getRandomDrink()
+  .then((results)=>{
+    var idDrink = results.data.drink[0].idDrink
+    navigate(`/cocktail/${idDrink}`)
+  })  
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app-container">
+      <div className="logo"><b>Sip, sip, <div className='hooray'>hooray!</div></b></div>
+
+      {!visible ? <DrinkSearch /> : <AdvancedSearch />}
+
+      {visible ? <button className="toggle two" onClick={() => setVisible( !visible )}>Click here to Search by Ingredients</button>
+        : <button className="toggle one" onClick={() => setVisible( !visible )}>Click here to Search by Cocktail</button>}
+      <br/>
+      <div className='or-container'>
+        <hr  style={{
+          background: 'white',
+          color: 'white',
+          borderColor: 'white',
+          height: '3px',
+          width: '7rem'
+        }}/> or find a new fav! <span/> 
+        <hr  style={{
+          background: 'white',
+          color: 'white',
+          borderColor: 'white',
+          height: '3px',
+          width: '7rem'
+        }}/>
+        <br/> and
+        </div>
+      <button 
+      className='random-drink-button'
+      onClick={onHandleClicked}
+      >Shake it up!</button>
+
+      <Footer />
+
     </div>
   );
 }

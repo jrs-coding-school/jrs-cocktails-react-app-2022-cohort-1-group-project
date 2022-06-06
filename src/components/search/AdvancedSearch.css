@@ -1,0 +1,106 @@
+.ingredient-form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  /* gap: 1px; */
+  
+  text-align: center;
+  margin: auto;
+  margin-top: 13vh;
+  width: fit-content;
+  border-radius: 5px;
+  color: #555;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 100%;
+  font-size: 16pt;
+}
+
+.ingredient-form .ingredient-search {
+  border: none;
+  background: white;
+  margin: auto;
+  color: inherit;
+  padding: 1.5rem 1rem;
+  font: inherit;
+}
+
+.ingredient-form .btn-group {
+  border: none;
+  place-items: center;
+  background: white;
+  margin: 0;
+  
+  color: inherit;
+  border-radius: 4px 0 0 4px;
+  white-space: nowrap;
+  
+  display: flex;
+  flex-direction: row;
+}
+
+.ingredient-form .btn-group .spirit {
+  border: none;
+  background: none;
+  padding: 1.5rem 1rem;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 900;
+  text-transform: capitalize;
+  
+}
+.ingredient-form .btn-group .spirit:hover {
+  color: #f68687;
+}
+
+.ingredient-form .btn-group .spirit:active {
+  color: black;
+}
+
+.ingredient-form .btn-group .spirit.selected {
+    color: white;
+    background-color: #f68687;
+}
+
+.ingredient-form select {
+  text-transform: capitalize;
+}
+
+.ingredient-form .mag-glass {
+  border: none;
+  cursor: pointer;
+  color: inherit;
+  background: none;
+}
+
+.ingredient-form .ingredient-search::placeholder {
+  color: #bbb;
+  font-size: 14pt;
+}
+
+.ingredient-form .mag-glass:hover {
+  opacity: 1;
+}
+
+.ingredient-form .ingredient-search:focus {
+  outline: none;
+}
+
+.ingredient-form .ing-search-bar {
+  position: relative;
+  background-color: white;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  overflow: hidden;
+  padding-right: 2rem;
+}
+
+.ingredient-form .mag-glass {
+  position: absolute;
+  top: 1.25rem;
+  right: 0.5rem;
+}
+
+.ingredient-form .mag-glass:focus {
+  outline: none;
+}

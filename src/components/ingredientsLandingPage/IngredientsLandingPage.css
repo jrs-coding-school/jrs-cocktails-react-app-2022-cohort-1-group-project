@@ -1,0 +1,29 @@
+.ingredients-page-root h1{
+    text-align: center;
+    padding: 1.5rem 20rem;
+    margin: 2rem auto 1rem auto;
+    min-width: fit-content;
+    white-space: nowrap;
+    
+    width: fit-content;
+
+    background-color: #dfe4e0a0;
+    backdrop-filter: blur(10px);
+    border-radius: 5px;
+       
+}
+
+.ingredients-page-root h1 .header {
+    text-transform: lowercase;
+    
+}
+
+.ingredients-page-root .drink-cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 10px;  
+    max-width: 50vw;  
+}
